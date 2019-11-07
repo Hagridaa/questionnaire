@@ -1,6 +1,6 @@
 # questionnaire
 
-sprintti1 vaatimukset: 
+Sprintti1 vaatimukset: 
 
 V2 Kyselyyn annetut yksittäiset vastaukset voi tallentaa. 
 
