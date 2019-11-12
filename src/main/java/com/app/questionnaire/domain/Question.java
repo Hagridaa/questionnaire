@@ -40,6 +40,26 @@ public class Question {
 	public Question() {
 		super();
 	}
+	
+
+	public Question(Long questionId, String questionText, Questiontype questiontype, Questionnaire questionnaire,
+			List<Answer> answers) {
+		super();
+		this.questionId = questionId;
+		this.questionText = questionText;
+		this.questiontype = questiontype;
+		this.questionnaire = questionnaire;
+		this.answers = answers;
+	}
+
+	public Question(Long questionId, String questionText, Questiontype questiontype, Questionnaire questionnaire) {
+		super();
+		this.questionId = questionId;
+		this.questionText = questionText;
+		this.questiontype = questiontype;
+		this.questionnaire = questionnaire;
+	}
+
 
 	public Long getQuestionId() {
 		return questionId;

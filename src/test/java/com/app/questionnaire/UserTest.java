@@ -10,7 +10,9 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.app.questionnaire.domain.Question;
 import com.app.questionnaire.domain.Questionnaire;
+import com.app.questionnaire.domain.Questiontype;
 import com.app.questionnaire.domain.User;
 
 
@@ -39,5 +41,7 @@ public class UserTest {
 		user4.setQuestionnares(questionnaires);
 		assertThat(user4.getQuestionnares()).isNotNull();
 	}
-}
+		
+	}
+
 
