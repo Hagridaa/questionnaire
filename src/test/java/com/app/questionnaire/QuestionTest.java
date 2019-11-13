@@ -23,7 +23,7 @@ public class QuestionTest {
 		User user4 = new User(null, "user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER", "piippo@gmail.com");
 		Questionnaire questionnaire1 = new Questionnaire(null, "testQuestionnaire", "description ", user4);
 		Question question = new Question(null, "Onko maito hyvää?", new Questiontype(null,"text"),questionnaire1);
-		System.out.println("tulosta testi kysymys: " + question.toString());
+		System.out.println("tulosta testi kysymys1: " + question.toString());
 		assertThat(question.getQuestionText()).isNotEmpty();
 		}
 	
@@ -32,7 +32,7 @@ public class QuestionTest {
 		User user4 = new User(null, "user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER", "piippo@gmail.com");
 		Questionnaire questionnaire1 = new Questionnaire(null, "testQuestionnaire", "description ", user4);
 		Question question = new Question(null, "Onko maito hyvää?", new Questiontype(null,"text"),questionnaire1);
-		System.out.println("tulosta testi kysymys: " + question.toString());
+		System.out.println("tulosta testi kysymys2: " + question.toString());
 		assertEquals("Onko maito hyvää?", question.getQuestionText());
 		}
 }
