@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
  	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
-    <title>Etusivu</title>
+    <title>REST Homepage</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
     <div>
@@ -17,19 +17,9 @@
 	  </div>
 	</nav>
 	</div>
-<table class="table table-striped">
-		<tr>
-		    <th>Title</th>
-		    <th>Description</th>
-		     <th>Question</th>
-		</tr>  
-    	<tr th:each = "questionnaire : ${questionnaires}">
-    		<td th:text="${questionnaire.title} ">name</td>
-    		<td th:text="${questionnaire.description} ">Description</td>
-    		<td><a th:text= >Questions</a></td>
-    				
-    	</tr>
-     </table>
+	
+	<a class="btn btn-success" href="http://localhost:8080/api/questionnaires" >Kyselyt</a>
+	<a class="btn btn-success" href="http://localhost:8080/api/questions" >Kysymykset</a>
 	
 	
 </body>

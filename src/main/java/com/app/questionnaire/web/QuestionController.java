@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.app.questionnaire.domain.Question;
 import com.app.questionnaire.domain.QuestionRepository;
@@ -16,13 +17,14 @@ public class QuestionController {
 	@Autowired
 	QuestionRepository questionRepository;
 	
-	// REST
-	@RequestMapping("/questions")
-	public Iterable<Question> getStudents() {
-		return questionRepository.findAll();
+	// JSON questions
+	@RequestMapping(value="/api/questions", method = RequestMethod.GET)
+	public @ResponseBody List<Question> getRestQuestions() {
+			return (List<Question>) questionRepository.findAll();
 	}
 	
-	@RequestMapping(value="/questionlist", method = RequestMethod.GET)
+	// Thymeleaf listing the questions
+	@RequestMapping(value="/questions", method = RequestMethod.GET)
 	public String getQuestions(Model model) {
 			List<Question> questions = (List<Question>) questionRepository.findAll();
 			model.addAttribute("questions", questions);

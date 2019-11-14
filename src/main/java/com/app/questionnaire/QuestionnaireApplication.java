@@ -36,6 +36,8 @@ public class QuestionnaireApplication {
 			
 			Question question1 = new Question(null, "Kuinka viihtyvät tilat koulussamme mielestäsi on?", null, null);
 			Question question2 = new Question(null, "Kuinka hyvä kurssitajonta mielestäsi on asteikolla 1-5?", null, null);
+			questionRepository.save(question1);
+			questionRepository.save(question2);
 			
 		
 			//(String username, String passwordHass, String role)
