@@ -11,7 +11,7 @@
 	     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 	    <div class="navbar-nav">
 	      <a class="nav-item nav-link"  href="/">Home</a>
-	      <a class="nav-item nav-link active" href="/questionnairelist">Your Questionnaires<span class="sr-only">(current)</span></a>
+	      <a class="nav-item nav-link active" href="/questionnaires">Your Questionnaires<span class="sr-only">(current)</span></a>
 	      <a class="nav-item nav-link" href="/resthomepage">REST Homepage</a>
 	    </div>
 	  </div>
@@ -21,9 +21,9 @@
 		    <th>Title</th>
 		    <th>Open</th>
 		</tr>  
-    	<tr th:each = "questionnaire : ${questionnaires}">
-    		<td th:text="${questionnaire.title} ">name</td>
-    		<td><a th:href="@{/questions/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-danger" >Open the Questionnaire</a></td>
+    	<tr th:each = "questionnaire: ${questionnaires}">
+    		<td th:text="${questionnaire.questionnaireTitle} ">name</td>
+    		<!--  <td><a th:href="@{/questions/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-danger" >Open the Questionnaire</a></td>-->
     				
     	</tr>
      </table>

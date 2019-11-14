@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+ 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+    <title>Etusivu</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body> 
+	<h1 class="display-4">New questionnaire</h1><br>
+	<div>
+	<p class="lead">Make a new questionnaire!</p>
+
+	<form action="#" th:action="@{/newquestionnaire}"  th:object= ${questionnaire} method="post">
+	<p>Title: <input type="text" th:field="${questionnaire.questionnaireTitle}" /></p>
+	<p>Description: <input type="text" th:field="${questionnaire.questionnaireDescription}" /></p>
+	
+	<input type="submit" class="btn btn-success" value="Lähetä" /> <input type="reset" class="btn btn-success" value="Tyhjennä" />
+	</form>
+	
+	</div>
+	
+	
+</body>
+</html>

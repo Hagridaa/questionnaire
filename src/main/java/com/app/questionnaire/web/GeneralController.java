@@ -17,4 +17,6 @@ public class GeneralController {
 		public String resthomepage() {
 			return "resthomepage";
 		}
+		
+		
 }

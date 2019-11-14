@@ -35,22 +35,22 @@ public class QuestionnaireController {
 	    }
 	    
 	    // Fetch all questionnaires from database
-		@RequestMapping(value = "/questions", method = RequestMethod.GET)
+		@RequestMapping(value = "/questionnaires", method = RequestMethod.GET)
 		public String getQuestionnaires(Model model) {
 			List<Questionnaire> questionnaires = (List<Questionnaire>) questionnaireRepository.findAll();
 			model.addAttribute("questionnaires", questionnaires);
 			return "questionnairelist";
 		}
 		
-		// THYMELEAF ADD
+		// Thymeleaf form to add questionnaire 
 	    @RequestMapping(value ="/newquestionnaire", method = RequestMethod.GET)
 		public String getNewQuestionnaireForm(Model model) {
-			model.addAttribute("question", new Question());
-			return "addquestionform";
+			model.addAttribute("questionnaire", new Questionnaire());
+			return "addquestionnaireform";
 		}
 		
 		// Thymeleaf save a new questionnaire
-	    @RequestMapping(value = "/savequestionnaire", method = RequestMethod.POST)
+	    @RequestMapping(value = "/newquestionnaire", method = RequestMethod.POST)
 	    public String saveQuestion(@ModelAttribute Questionnaire questionnaire) {
 		questionnaireRepository.save(questionnaire);
 		return "redirect:/questionnairelist";
