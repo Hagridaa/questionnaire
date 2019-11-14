@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add a question</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>New question:</h1>
+	<form action="#" th:action="@{/savequestion}"  th:object= ${question} method="post">
+	<p>Write your question here: <input type="text" th:field="${question.text}"/></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+	</form> 
+</body>
+</html>

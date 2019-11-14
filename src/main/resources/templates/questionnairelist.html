@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+ 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+    <title>Kurssit</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	  <a class="navbar-brand" href="/"/>
+	     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	    <div class="navbar-nav">
+	      <a class="nav-item nav-link"  href="/">Home</a>
+	      <a class="nav-item nav-link active" href="/questionnairelist">Your Questionnaires<span class="sr-only">(current)</span></a>
+	      <a class="nav-item nav-link" href="/resthomepage">REST Homepage</a>
+	    </div>
+	  </div>
+	</nav>
+	 <table class="table table-striped">
+		<tr>
+		    <th>Title</th>
+		    <th>Open</th>
+		</tr>  
+    	<tr th:each = "questionnaire : ${questionnaires}">
+    		<td th:text="${questionnaire.title} ">name</td>
+    		<td><a th:href="@{/questions/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-danger" >Open the Questionnaire</a></td>
+    				
+    	</tr>
+     </table>
+</body>
+</html>

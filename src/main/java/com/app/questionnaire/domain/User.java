@@ -36,7 +36,7 @@ public class User {
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
 	@JsonIgnore
-	private List<Questionnaire> questionnares;
+	private List<Questionnaire> questionnaires;
 
 	public User() {
 		super();
@@ -50,7 +50,7 @@ public class User {
 		this.passwordHass = passwordHass;
 		this.role = role;
 		this.email = email;
-		this.questionnares = questionnares;
+		this.questionnaires = questionnaires;
 	}
 	
 	
@@ -104,18 +104,18 @@ public class User {
 		this.email = email;
 	}
 
-	public List<Questionnaire> getQuestionnares() {
-		return questionnares;
+	public List<Questionnaire> getQuestionnaires() {
+		return questionnaires;
 	}
 
 	public void setQuestionnares(List<Questionnaire> questionnares) {
-		this.questionnares = questionnares;
+		this.questionnaires = questionnares;
 	}
 
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", username=" + username + ", passwordHass=" + passwordHass + ", role=" + role
-				+ ", email=" + email + ", questionnares=" + questionnares + "]";
+				+ ", email=" + email + ", questionnaires=" + questionnaires + "]";
 	}
 	
 	
