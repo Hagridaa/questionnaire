@@ -51,9 +51,9 @@ public class QuestionnaireController {
 		
 		// Thymeleaf save a new questionnaire
 	    @RequestMapping(value = "/newquestionnaire", method = RequestMethod.POST)
-	    public String saveQuestion(@ModelAttribute Questionnaire questionnaire) {
+	    public String saveQuestionnaire(@ModelAttribute Questionnaire questionnaire) {
 		questionnaireRepository.save(questionnaire);
-		return "redirect:/questionnairelist";
+		return "redirect:/questionnaires";
 		}
 
 }
