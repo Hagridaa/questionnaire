@@ -59,6 +59,19 @@ public class Question {
 		this.questiontype = questiontype;
 		this.questionnaire = questionnaire;
 	}
+	
+	public Question(String questionText, Questiontype questiontype, Questionnaire questionnaire) {
+		super();
+		this.questionText = questionText;
+		this.questiontype = questiontype;
+		this.questionnaire = questionnaire;
+	}
+	
+	public Question(String questionText, Questiontype questiontype) {
+		super();
+		this.questionText = questionText;
+		this.questiontype = questiontype;
+	}
 
 
 	public Long getQuestionId() {
