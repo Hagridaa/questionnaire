@@ -32,15 +32,15 @@ public class UserTest {
 		//assertThat(user3.getUsername().isEmpty());
 	}
 	
-	/* @Test
+	 @Test
 	public void newUser_shouldHaveQuestionnares() {
 		User user4 = new User(null, "user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER", "piippo@gmail.com");
 		Questionnaire questionnaire1 = new Questionnaire(null, "testQuestionnaire", "description ", user4);
 		Questionnaire quesitonnaire2 = new Questionnaire(null, "testQuestionnaire2", "description ", user4);
 		List<Questionnaire> questionnaires = List.of(questionnaire1, quesitonnaire2);
 		user4.setQuestionnares(questionnaires);
-		assertThat(user4.getQuestionnaires()).isNotNull();
-	} */
+		assertThat(user4.getQuestionnaires()).size().isNotNull();
+	} 
 		
 	}
 
