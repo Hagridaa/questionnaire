@@ -38,15 +38,15 @@ public class QuestionnaireApplication {
 			questionRepository.save(question2);
 			
 			
-			List<Question> questionlist = new ArrayList<>();
-			questionlist.add(question1);
-			questionlist.add(question2);
+			List<Question> questionlist1 = new ArrayList<>();
+			questionlist1.add(question1);
+			questionlist1.add(question2);
 			
 			// Tämä lista on tyhjä
 			List<Question>questionlist2 = new ArrayList<>();
 			
-			Questionnaire questionnaire1 = new Questionnaire("Koulukysely1", "Koulun viihtyvyyden kartoitus", null, null);
-			Questionnaire questionnaire2 = new Questionnaire("Koulukysely2", "Kurssitarjonnan kartoitus", null, null);
+			Questionnaire questionnaire1 = new Questionnaire("Koulukysely1", "Koulun viihtyvyyden kartoitus", questionlist1, null);
+			Questionnaire questionnaire2 = new Questionnaire("Koulukysely2", "Kurssitarjonnan kartoitus", questionlist2, null);
 			questionnaireRepository.save(questionnaire1);
 			questionnaireRepository.save(questionnaire2);
 			
