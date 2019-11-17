@@ -91,12 +91,6 @@ public class QuestionnaireApplication {
 			
 			
 			
-			
-			
-			
-		
-			
-			
 			//create a answer object for testing answer
 
 			//create object mapper

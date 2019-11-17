@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,19 +28,24 @@ public class AnswerController {
 	@Autowired
 	AnswerRepository aRepository;
 	
-	@RequestMapping(value="/saveanswer", method = RequestMethod.POST)
-	public ResponseEntity<String> saveNewAnswer(String json) {
+	@RequestMapping(value="/saveanswer", method = RequestMethod.POST, consumes="application/json")
+	public ResponseEntity<String> saveNewAnswer(@RequestBody String json) {
 		
 		log.info(json.toString());
 		//luodaan objectMapper
 		ObjectMapper objectMapper = new ObjectMapper();
 		
 		//Luetaan json ja muutetaan se answer olioksi
-		List<Answer> answer = null;
+		List<Answer> answers = null;
 		try {
-				answer = objectMapper.readValue(json, new TypeReference<List<Answer>>(){});
-				aRepository.saveAll(answer);
-			
+				answers = objectMapper.readValue(json, new TypeReference<List<Answer>>(){});
+				int i = 0;
+				while (i < answers.size()) {
+				  System.out.println(i);
+				  aRepository.save(answers.get(i));
+				  i++;
+				}
+						
 		}  catch (IOException e) {
 			log.error("Jsonparsing failed", e);
 			e.printStackTrace();
