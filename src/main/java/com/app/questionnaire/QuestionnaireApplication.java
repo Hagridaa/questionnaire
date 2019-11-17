@@ -1,5 +1,8 @@
 package com.app.questionnaire;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -29,15 +32,23 @@ public class QuestionnaireApplication {
 		return (args) -> {
 			log.info("save a couple of users");
 			
-			Questionnaire questionnaire1 = new Questionnaire(null, "Koulukysely1", "Koulun viihtyvyyden kartoitus", null);
-			Questionnaire questionnaire2 = new Questionnaire(null, "Koulukysely2", "Kurssitarjonnan kartoitus", null);
-			questionnaireRepository.save(questionnaire1);
-			questionnaireRepository.save(questionnaire2);
-			
-			Question question1 = new Question(null, "Kuinka viihtyisät tilat koulussamme mielestäsi on?", null, null);
-			Question question2 = new Question(null, "Kuinka hyvä kurssitajonta mielestäsi on asteikolla 1-5?", null, null);
+			Question question1 = new Question("Kuinka viihtyisät tilat koulussamme mielestäsi on?", null);
+			Question question2 = new Question("Kuinka hyvä kurssitajonta mielestäsi on asteikolla 1-5?", null);
 			questionRepository.save(question1);
 			questionRepository.save(question2);
+			
+			
+			List<Question> questionlist = new ArrayList<>();
+			questionlist.add(question1);
+			questionlist.add(question2);
+			
+			// Tämä lista on tyhjä
+			List<Question>questionlist2 = new ArrayList<>();
+			
+			Questionnaire questionnaire1 = new Questionnaire("Koulukysely1", "Koulun viihtyvyyden kartoitus", null, null);
+			Questionnaire questionnaire2 = new Questionnaire("Koulukysely2", "Kurssitarjonnan kartoitus", null, null);
+			questionnaireRepository.save(questionnaire1);
+			questionnaireRepository.save(questionnaire2);
 			
 		
 			//(String username, String passwordHass, String role)

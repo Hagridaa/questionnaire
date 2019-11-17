@@ -58,6 +58,15 @@ public class Questionnaire {
 		this.questionnaireDescription = questionnaireDescription;
 		this.user = user;
 	}
+	
+	public Questionnaire(String questionnaireTitle, String questionnaireDescription,
+			List<Question> questions, User user) {
+		super();
+		this.questionnaireTitle = questionnaireTitle;
+		this.questionnaireDescription = questionnaireDescription;
+		this.questions = questions;
+		this.user = user;
+	}
 
 	public Long getQuestionnaireId() {
 		return questionnaireId;
