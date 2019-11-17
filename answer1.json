@@ -1,0 +1,47 @@
+[ {
+  "answerId" : null,
+  "answerText" : "tilat ovat viihtyisät",
+  "question" : {
+    "questionId" : 1,
+    "questionText" : "Ovatko koulun tilat viihtyisät?",
+    "questiontype" : {
+      "questiontypeId" : 1,
+      "questiontypeName" : "text"
+    },
+    "questionnaire" : {
+      "questionnaireId" : 1,
+      "questionnaireTitle" : "testQuestionnaire",
+      "questionnaireDescription" : "description ",
+      "user" : {
+        "userId" : 1,
+        "username" : "user",
+        "passwordHass" : "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
+        "role" : "USER",
+        "email" : "piippo@gmail.com"
+      }
+    }
+  }
+}, {
+  "answerId" : null,
+  "answerText" : "tilat ovat modernit",
+  "question" : {
+    "questionId" : 2,
+    "questionText" : "Ovatko koulun tilat modernit?",
+    "questiontype" : {
+      "questiontypeId" : 1,
+      "questiontypeName" : "text"
+    },
+    "questionnaire" : {
+      "questionnaireId" : 1,
+      "questionnaireTitle" : "testQuestionnaire",
+      "questionnaireDescription" : "description ",
+      "user" : {
+        "userId" : 1,
+        "username" : "user",
+        "passwordHass" : "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
+        "role" : "USER",
+        "email" : "piippo@gmail.com"
+      }
+    }
+  }
+} ]

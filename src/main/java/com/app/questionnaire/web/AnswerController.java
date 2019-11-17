@@ -1,6 +1,7 @@
 package com.app.questionnaire.web;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.questionnaire.domain.Answer;
 import com.app.questionnaire.domain.AnswerRepository;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
@@ -28,21 +30,33 @@ public class AnswerController {
 	@RequestMapping(value="/saveanswer", method = RequestMethod.POST)
 	public ResponseEntity<String> saveNewAnswer(String json) {
 		
+		log.info(json.toString());
 		//luodaan objectMapper
 		ObjectMapper objectMapper = new ObjectMapper();
 		
 		//Luetaan json ja muutetaan se answer olioksi
-		Answer answer = null;
+		List<Answer> answer = null;
 		try {
-			answer = objectMapper.readValue(json, Answer.class);
+				answer = objectMapper.readValue(json, new TypeReference<List<Answer>>(){});
+				aRepository.saveAll(answer);
+			
 		}  catch (IOException e) {
 			log.error("Jsonparsing failed", e);
 			e.printStackTrace();
 		}
 		
-		//tallennetaan uutena Answer oliona
-		aRepository.save(answer);
+//		int i = 0;
+//		while (i < json.size()) {
+//		  System.out.println(i);
+//		  aRepository.save(json.get(i));
+//		  i++;
+//		}
 		
+		log.info("frontista saatu tallennettava vastauslista on: ",json.toString());
+		//tallennetaan uutena Answer oliona
+		
+		Iterable<Answer> foundedAnswers = aRepository.findAll();
+		log.info("founded answers: " ,foundedAnswers.toString());
 		//palautetaan onnistumisviesti fronttiin
 		return new  ResponseEntity<String>("Answer received!",HttpStatus.OK);
 	}
