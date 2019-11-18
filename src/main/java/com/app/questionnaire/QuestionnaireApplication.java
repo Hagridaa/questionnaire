@@ -37,8 +37,6 @@ public class QuestionnaireApplication {
 	@Bean
 	public CommandLineRunner Demo(QuestiontypeRepository questionTypeRepository, UserRepository userRepository, QuestionnaireRepository questionnaireRepository, QuestionRepository questionRepository, AnswerRepository aRepository) { 
 		return (args) -> {
-			
-			
 			log.info("save a couple of users,questionnaires for users and questions for questionnaires");
 			
 			//luodaan uusi käyttäjä
@@ -55,22 +53,22 @@ public class QuestionnaireApplication {
 			List<Question> questionlist1 = new ArrayList<>();
 			List<Question> questionlist2 = new ArrayList<>();
 			
-			Questionnaire questionnaire1 = new Questionnaire(null, "Tilojen viihtyisyys", "Tutkitaan tilojen xx",questionlist1,user1);
-			Questionnaire questionnaire2 = new Questionnaire(null, "Tilojen viihtyisyys2", "Tutkitaan tilojen xx2",questionlist2,user2);
+			Questionnaire questionnaire1 = new Questionnaire(null, "Tilojen viihtyisyys", "Tutkitaan tilojen viihtyisyyttä",questionlist1,user1);
+			Questionnaire questionnaire2 = new Questionnaire(null, "Tilojen moderniutta", "Tutkitaan tilojen moderniutta",questionlist2,user2);
 			questionnaireRepository.save(questionnaire1);
 			questionnaireRepository.save(questionnaire2);
-			//List<Questionnaire> questionnaires = List.of(questionnaire1,questionnaire2);
-			//log.info("Test questionnaires are: " + questionnaire1, questionnaire2);
-			//log.info("Testlist is: "+ questionnaires);
+			List<Questionnaire> questionnaires = List.of(questionnaire1,questionnaire2);
+			log.info("Test questionnaires are: " + questionnaire1, questionnaire2);
+			log.info("Testlist is: "+ questionnaires);
 			
 			//luodaan uusi kysymys
 			//Long questionId, String questionText, Questiontype questiontype, Questionnaire questionnaire,
 			//List<Answer> answers
 			Questiontype questionType1 = new Questiontype(null,"text");
 			questionTypeRepository.save(questionType1);
-			Question question1 = new Question(null, "Onko maito hyvää?", questionType1, questionnaire1);
+			
+			Question question1 = new Question(null, "Ovatko tilat viihtyisät?", questionType1, questionnaire1);
 			Question question2 = new Question(null,"Kuinka viihtyisät tilat koulussamme mielestäsi on?", questionType1, questionnaire1);
-			//Question question2 = new Question("Kuinka hyvä kurssitajonta mielestäsi on asteikolla 1-5?", null);
 			questionRepository.save(question1);
 			questionRepository.save(question2);
 
@@ -78,54 +76,36 @@ public class QuestionnaireApplication {
 			log.info("Test questions are: " + question1 + " and " + question2);
 			log.info("Test questionlist is: " + questionlist1);
 			
-			Answer answer1 = new Answer(null,"Minusta maito on hyvää",question1);
-			aRepository.save(answer1);
-			log.info("First test answer is: " + answer1);
-			
-			Answer answer2 = new Answer(null,"Minusta tilat ovat viihtyisät",question2);
-			aRepository.save(answer2);
-			log.info("Second test answer is: " + answer2);
-			
-			//List<Answer> answers = List.of(answer1,answer2);
-			//log.info("Test answerlist is: "+ answers);
-			
-			
-			
-			
-			
-			
-		
-			
-			
-			//create a answer object for testing answer
+//			Answer answer1 = new Answer(null,"Minusta tilat ovat modernit",question1);
+//			aRepository.save(answer1);
+//			log.info("First test answer is: " + answer1);
+//			
+//			Answer answer2 = new Answer(null,"Minusta tilat ovat viihtyisät",question2);
+//			aRepository.save(answer2);
+//			log.info("Second test answer is: " + answer2);
+//			
+//			List<Answer> answers = List.of(answer1,answer2);
+//			log.info("Test answerlist is: "+ answers);
+						
 
 			//create object mapper
-//			 ObjectMapper objectMapper = new ObjectMapper();
-//
-//			User user3 = new User(1L, "user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER", "piippo@gmail.com");
-//
-//			Questionnaire questionnaire3 = new Questionnaire(1L, "testQuestionnaire", "description ", user3);
-////			List <Questionnaire> questionnaires = List.of(questionnaire3);
-////			user3.setQuestionnares(questionnaires);
-//
-//			Question question3 = new Question(1L, "Ovatko koulun tilat viihtyisät?", new Questiontype(1L,"text"),questionnaire3);
-//			Question question4 = new Question(2L, "Ovatko koulun tilat modernit?", new Questiontype(1L,"text"),questionnaire3);
-////			List <Question> questions = List.of(question3);
-////			questionnaire3.setQuestions(questions);
-//			//Answer(Long answerId, String answerText, Question question
-//			Answer answer1 = new Answer(null,"tilat ovat viihtyisät",question3);
-//			Answer answer2 = new Answer(null,"tilat ovat modernit",question4);
-//
-//
-//			log.info("Answer1 is: " + answer1);
-//
-//			question3.setAnswers(List.of(answer1));
-//			question4.setAnswers(List.of(answer2));
-//			 //configure objectMapper for pretty input
-//	        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
-//
-//	        //write answerObj object to answer1.json file
-//	        objectMapper.writeValue(new File("answer1.json"), List.of(answer1, answer2));
+			ObjectMapper objectMapper = new ObjectMapper();
+
+			//Answer(Long answerId, String answerText, Question question
+			Answer answer3 = new Answer(null,"tilat ovat viihtyisät",question1);
+			Answer answer4 = new Answer(null,"tilat ovat modernit",question2);
+			
+			log.info("Answer1 is: " + answer4);
+
+			question1.setAnswers(List.of(answer3));
+			question2.setAnswers(List.of(answer4));
+			 //configure objectMapper for pretty input
+	        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
+
+	        //write answerObj object to answer1.json file
+	        
+	        objectMapper.writeValue(new File("answer1.json"), List.of(answer3, answer4));
+	        
 		};
 	}
 }

@@ -2,22 +2,22 @@
   "answerId" : null,
   "answerText" : "tilat ovat viihtyisät",
   "question" : {
-    "questionId" : 1,
-    "questionText" : "Ovatko koulun tilat viihtyisät?",
+    "questionId" : 4,
+    "questionText" : "Ovatko tilat viihtyisät?",
     "questiontype" : {
-      "questiontypeId" : 1,
+      "questiontypeId" : 3,
       "questiontypeName" : "text"
     },
     "questionnaire" : {
       "questionnaireId" : 1,
-      "questionnaireTitle" : "testQuestionnaire",
-      "questionnaireDescription" : "description ",
+      "questionnaireTitle" : "Tilojen viihtyisyys",
+      "questionnaireDescription" : "Tutkitaan tilojen viihtyisyyttä",
       "user" : {
         "userId" : 1,
         "username" : "user",
         "passwordHass" : "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
         "role" : "USER",
-        "email" : "piippo@gmail.com"
+        "email" : "pii@gmail.com"
       }
     }
   }
@@ -25,22 +25,22 @@
   "answerId" : null,
   "answerText" : "tilat ovat modernit",
   "question" : {
-    "questionId" : 2,
-    "questionText" : "Ovatko koulun tilat modernit?",
+    "questionId" : 5,
+    "questionText" : "Kuinka viihtyisät tilat koulussamme mielestäsi on?",
     "questiontype" : {
-      "questiontypeId" : 1,
+      "questiontypeId" : 3,
       "questiontypeName" : "text"
     },
     "questionnaire" : {
       "questionnaireId" : 1,
-      "questionnaireTitle" : "testQuestionnaire",
-      "questionnaireDescription" : "description ",
+      "questionnaireTitle" : "Tilojen viihtyisyys",
+      "questionnaireDescription" : "Tutkitaan tilojen viihtyisyyttä",
       "user" : {
         "userId" : 1,
         "username" : "user",
         "passwordHass" : "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
         "role" : "USER",
-        "email" : "piippo@gmail.com"
+        "email" : "pii@gmail.com"
       }
     }
   }
