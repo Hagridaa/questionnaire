@@ -28,43 +28,32 @@ public class AnswerController {
 	@Autowired
 	AnswerRepository aRepository;
 	
+	@RequestMapping(value="/allanswers", method = RequestMethod.GET)
+	public Iterable<Answer> findAllAnswers() {
+		return aRepository.findAll();
+	}
+	
 	@RequestMapping(value="/saveanswer", method = RequestMethod.POST, consumes="application/json")
 	public ResponseEntity<String> saveNewAnswer(@RequestBody String json) {
-		
 		log.info(json.toString());
 		//luodaan objectMapper
 		ObjectMapper objectMapper = new ObjectMapper();
 		
-		//Luetaan json ja muutetaan se answer olioksi
-		List<Answer> answers = null;
+		//Luetaan json ja muutetaan se answer olioiksi
 		try {
-				answers = objectMapper.readValue(json, new TypeReference<List<Answer>>(){});
+			List<Answer> answers = objectMapper.readValue(json, new TypeReference<List<Answer>>(){});
+				log.info(answers.toString());
 				int i = 0;
 				while (i < answers.size()) {
-				  System.out.println(i);
+				  log.info("Tallennettava vastaus: " + answers.get(i).getAnswerText());
 				  aRepository.save(answers.get(i));
 				  i++;
-				}
-						
+				}			
 		}  catch (IOException e) {
 			log.error("Jsonparsing failed", e);
-			e.printStackTrace();
 		}
-		
-//		int i = 0;
-//		while (i < json.size()) {
-//		  System.out.println(i);
-//		  aRepository.save(json.get(i));
-//		  i++;
-//		}
-		
-		log.info("frontista saatu tallennettava vastauslista on: ",json.toString());
-		//tallennetaan uutena Answer oliona
-		
-		Iterable<Answer> foundedAnswers = aRepository.findAll();
-		log.info("founded answers: " ,foundedAnswers.toString());
+
 		//palautetaan onnistumisviesti fronttiin
 		return new  ResponseEntity<String>("Answer received!",HttpStatus.OK);
 	}
-		
 }
