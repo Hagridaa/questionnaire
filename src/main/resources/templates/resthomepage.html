@@ -10,16 +10,119 @@
 	  <a class="navbar-brand" href="/"/>
 	     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 	    <div class="navbar-nav">
-	      <a class="nav-item nav-link" href="/">Home</a>
-	      <a class="nav-item nav-link" href="/questionnaires">Your Questionnaires</a>
+	      <a class="nav-item nav-link" href="/homepage">Home</a>
+	      <a class="nav-item nav-link" href="/questionnairelist">Your Questionnaires</a>
 	      <a class="nav-item nav-link active" href="/resthomepage"><span class="sr-only">(current)</span>REST Homepage</a>
 	    </div>
 	  </div>
 	</nav>
 	</div>
 	
-	<a class="btn btn-success" href="http://localhost:8080/api/questionnaires" >Questions</a>
-	<a class="btn btn-success" href="http://localhost:8080/api/questions" >Questionnaires</a>
+	<h1>REST Homepage</h1>
+	<h2>All Questions</h2>
+	<p>
+		<strong>Method:</strong> GET 
+		<a class="btn btn-success" href="http://localhost:8080/api/questions" >Endpoint: /api/questions</a>
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre>
+		<code>
+		[{
+			"questionText": "Kuinka viihdyt koulussa?",
+			"questionType": "text"
+		},
+		{
+			"questionText": "Moneltako tuntien pitäisi mielestäsi alkaa?",
+			"questionType": "text"
+		},
+		{
+			"questionText": "Oletko saanut valita mieleisiäsi kursseja?",
+			"questionType": "text"
+		}]
+		</code>
+	</pre>
+	<h2>All Questionnaires</h2>
+	<p>
+		<strong>Method:</strong> GET 
+	<a class="btn btn-success" href="http://localhost:8080/api/questionnaires" >Endpoint: /api/questionnaires</a>
+
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre>
+		<code>
+		
+		[{
+			"questionnaireId": 1,
+			"questionnaireTitle": "Tilojen viihtyisyys",
+			"questionnaireDescription": "Tutkitaan tilojen xx",
+			"user": {
+				"userId": 1,
+				"username": "user",
+				"passwordHass": "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
+				"role": "USER",
+				"email": "pii@gmail.com"
+			}
+		},
+		{
+			"questionnaireId": 2,
+			"questionnaireTitle": "Tilojen viihtyisyys2",
+			"questionnaireDescription": "Tutkitaan tilojen xx2",
+			"user": {
+				"userId": 2,
+				"username": "admin",
+				"passwordHass": "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C",
+				"role": "ADMIN",
+				"email": "moo@gmail.com"
+			}
+		}]
+		</code>
+	</pre>
+	<!--  <h2>Question By Id</h2>
+	<p>
+		<strong> GET </strong>
+		<strong> /questions/{id} </strong> 
+		<strong><a href="/books/ISBN54321V">/books/ISBN54321V</a></strong>
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre>
+		<code>
+		{
+			"isbn": "ISBN54321V",
+			"title": "Elämäni muro",
+			"author":"Matti Mörökölli",
+			"year": 1902,
+			"price": 399.99,
+			"category": "poetry"
+		}
+		</code>
+	</pre>
+	<h2>New Book</h2>
+	<p>
+		<strong> POST </strong> 
+		<strong> /books</strong> 
+		(Test with <a href="https://www.getpostman.com/" target="_blank">PostMan</a>/etc.)
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre>
+		<code>
+		{
+			"isbn": "ISBN54321P",
+			"title": "The love of my life",
+			"author":"Cheesy Cheeseball",
+			"year": 2012,
+			"price": 7.99,
+			"category": "romance"
+		}
+		</code>
+	</pre>-->
 	
 	
 </body>

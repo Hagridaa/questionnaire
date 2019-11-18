@@ -59,9 +59,9 @@ public class QuestionnaireApplication {
 			Questionnaire questionnaire2 = new Questionnaire(null, "Tilojen viihtyisyys2", "Tutkitaan tilojen xx2",questionlist2,user2);
 			questionnaireRepository.save(questionnaire1);
 			questionnaireRepository.save(questionnaire2);
-			List<Questionnaire> questionnaires = List.of(questionnaire1,questionnaire2);
-			log.info("Test questionnaires are: " + questionnaire1, questionnaire2);
-			log.info("Testlist is: "+ questionnaires);
+			//List<Questionnaire> questionnaires = List.of(questionnaire1,questionnaire2);
+			//log.info("Test questionnaires are: " + questionnaire1, questionnaire2);
+			//log.info("Testlist is: "+ questionnaires);
 			
 			//luodaan uusi kysymys
 			//Long questionId, String questionText, Questiontype questiontype, Questionnaire questionnaire,
@@ -86,8 +86,8 @@ public class QuestionnaireApplication {
 			aRepository.save(answer2);
 			log.info("Second test answer is: " + answer2);
 			
-			List<Answer> answers = List.of(answer1,answer2);
-			log.info("Test answerlist is: "+ answers);
+			//List<Answer> answers = List.of(answer1,answer2);
+			//log.info("Test answerlist is: "+ answers);
 			
 			
 			
