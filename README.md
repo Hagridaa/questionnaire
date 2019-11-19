@@ -6,7 +6,7 @@ Git branch ohje:
 git checkout -b omabranchinnimi
 kun teet yllämainitun, niin siirryt samoin tein uuteen, luomaasi branchiin.
 
-2.Tee ja commitoi jne muutoksia normaalisti branchissasi.
+2.Tee ja commitoi ja pushaa muutoksia normaalisti branchissasi.
 
 3. Kun haluat mergetä masteriin oman branchisi:
 git status (jotta varmistat, että kaikki haluamasi muutokset on commitoitu branchiisi)
