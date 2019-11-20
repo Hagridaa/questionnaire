@@ -10,8 +10,8 @@
 	  <a class="navbar-brand" href="/"/>
 	     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 	    <div class="navbar-nav">
-	      <a class="nav-item nav-link" href="/homepage">Home</a>
-	      <a class="nav-item nav-link" href="/questionnairelist">Your Questionnaires</a>
+	      <a class="nav-item nav-link" href="/">Home</a>
+	      <a class="nav-item nav-link" href="/questionnaires">Your Questionnaires</a>
 	      <a class="nav-item nav-link active" href="/resthomepage"><span class="sr-only">(current)</span>REST Homepage</a>
 	    </div>
 	  </div>
@@ -22,134 +22,11 @@
 	<p>
 	(Test with <a href="https://www.getpostman.com/" target="_blank">PostMan</a>/etc.)
 	</p>
-		<h2>URL for save answer</h2>
+	
+		<h2>All Questions</h2>
 	<p>
-		<strong>Method:</strong> POST <strong>Endpoint:</strong> <strong><a
-			href=/saveanswer>/saveanswer</a></strong>
-			
-	</p>
-	<p>
-		<strong>JSON Example:</strong>
-	</p>
-	<pre><code>
-	[ {
-  "answerId" : null,
-  "answerText" : "tilat ovat viihtyisät",
-  "question" : {
-    "questionId" : 4,
-    "questionText" : "Ovatko tilat viihtyisät?",
-    "questiontype" : {
-      "questiontypeId" : 3,
-      "questiontypeName" : "text"
-    },
-    "questionnaire" : {
-      "questionnaireId" : 1,
-      "questionnaireTitle" : "Tilojen viihtyisyys",
-      "questionnaireDescription" : "Tutkitaan tilojen viihtyisyyttä",
-      "user" : {
-        "userId" : 1,
-        "username" : "user",
-        "passwordHass" : "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
-        "role" : "USER",
-        "email" : "pii@gmail.com"
-      }
-    }
-  }
-}, {
-  "answerId" : null,
-  "answerText" : "tilat ovat modernit",
-  "question" : {
-    "questionId" : 5,
-    "questionText" : "Kuinka viihtyisät tilat koulussamme mielestäsi on?",
-    "questiontype" : {
-      "questiontypeId" : 3,
-      "questiontypeName" : "text"
-    },
-    "questionnaire" : {
-      "questionnaireId" : 1,
-      "questionnaireTitle" : "Tilojen viihtyisyys",
-      "questionnaireDescription" : "Tutkitaan tilojen viihtyisyyttä",
-      "user" : {
-        "userId" : 1,
-        "username" : "user",
-        "passwordHass" : "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
-        "role" : "USER",
-        "email" : "pii@gmail.com"
-      }
-    }
-  }
-} ]
-	</code></pre>
-	
-		<h2>URL for fetching all Answers from database</h2>
-	<p>
-		<strong>Method:</strong> GET <strong>Endpoint:</strong> <strong><a
-			href="/allanswers">/allanswers</a></strong>
-	</p>
-	<p>
-		<strong>JSON Example:</strong>
-	</p>
-	<pre><code>
-	[
-    {
-        "answerId": 6,
-        "answerText": "tilat ovat viihtyisät",
-        "question": {
-            "questionId": 4,
-            "questionText": "Ovatko tilat viihtyisät?",
-            "questiontype": {
-                "questiontypeId": 3,
-                "questiontypeName": "text"
-            },
-            "questionnaire": {
-                "questionnaireId": 1,
-                "questionnaireTitle": "Tilojen viihtyisyys",
-                "questionnaireDescription": "Tutkitaan tilojen viihtyisyyttä",
-                "user": {
-                    "userId": 1,
-                    "username": "user",
-                    "passwordHass": "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
-                    "role": "USER",
-                    "email": "pii@gmail.com"
-                }
-            }
-        }
-    },
-    {
-        "answerId": 7,
-        "answerText": "tilat ovat modernit",
-        "question": {
-            "questionId": 5,
-            "questionText": "Kuinka viihtyisät tilat koulussamme mielestäsi on?",
-            "questiontype": {
-                "questiontypeId": 3,
-                "questiontypeName": "text"
-            },
-            "questionnaire": {
-                "questionnaireId": 1,
-                "questionnaireTitle": "Tilojen viihtyisyys",
-                "questionnaireDescription": "Tutkitaan tilojen viihtyisyyttä",
-                "user": {
-                    "userId": 1,
-                    "username": "user",
-                    "passwordHass": "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
-                    "role": "USER",
-                    "email": "pii@gmail.com"
-                }
-            }
-        }
-    }
-]
-	</code></pre>
-	
-	
-	
-	
-	
-	<h2>All Questions</h2>
-	<p>
-		<strong>Method:</strong> GET 
-		<a class="btn btn-success" href="http://localhost:8080/api/questions" >Endpoint: /api/questions</a>
+	<strong>Method:</strong> GET <strong>Endpoint:</strong> <strong><a
+			href=http://localhost:8080/api/questions>/api/questions</a></strong>
 	</p>
 	<p>
 		<strong>JSON Example:</strong>
@@ -170,11 +47,99 @@
 		}]
 		</code>
 	</pre>
+	
+		<h2>URL for save answer</h2>
+	<p>
+		<strong>Method:</strong> POST <strong>Endpoint:</strong> <strong><a
+			href=/saveanswer>/saveanswer</a></strong>
+			
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre>
+		<code>
+		[{
+	  "answerId" : null,
+	  "answerText" : "tilat ovat viihtyisät",
+	  "question" : {
+	    "questionId" : 4
+		}, 
+		{
+	  "answerId" : null,
+	  "answerText" : "tilat ovat modernit",
+	  "question" : {
+	    "questionId" : 5
+		}
+		}]
+		</code>
+	</pre>
+	
+		<h2>URL for fetching all Answers from database</h2>
+	<p>
+		<strong>Method:</strong> GET <strong>Endpoint:</strong> <strong><a
+			href="/allanswers">/allanswers</a></strong>
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre>
+		<code>
+		[{
+	        "answerId": 6,
+	        "answerText": "tilat ovat viihtyisät",
+	        "question": {
+	            "questionId": 4,
+	            "questionText": "Ovatko tilat viihtyisät?",
+	            "questiontype": {
+	                "questiontypeId": 3,
+	                "questiontypeName": "text"
+	            },
+	            "questionnaire": {
+	                "questionnaireId": 1,
+	                "questionnaireTitle": "Tilojen viihtyisyys",
+	                "questionnaireDescription": "Tutkitaan tilojen viihtyisyyttä",
+	                "user": {
+	                    "userId": 1,
+	                    "username": "user",
+	                    "passwordHass": "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
+	                    "role": "USER",
+	                    "email": "pii@gmail.com"
+	                }
+	            }
+	        }
+	    },
+	    {
+	        "answerId": 7,
+	        "answerText": "tilat ovat modernit",
+	        "question": {
+	            "questionId": 5,
+	            "questionText": "Kuinka viihtyisät tilat koulussamme mielestäsi on?",
+	            "questiontype": {
+	                "questiontypeId": 3,
+	                "questiontypeName": "text"
+	            },
+	            "questionnaire": {
+	                "questionnaireId": 1,
+	                "questionnaireTitle": "Tilojen viihtyisyys",
+	                "questionnaireDescription": "Tutkitaan tilojen viihtyisyyttä",
+	                "user": {
+	                    "userId": 1,
+	                    "username": "user",
+	                    "passwordHass": "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
+	                    "role": "USER",
+	                    "email": "pii@gmail.com"
+	                }
+	            }
+	        }
+	    }]
+		</code>
+	</pre>
+	
 	<h2>All Questionnaires</h2>
 	<p>
-		<strong>Method:</strong> GET 
-	<a class="btn btn-success" href="http://localhost:8080/api/questionnaires" >Endpoint: /api/questionnaires</a>
-
+		<strong>Method:</strong> GET <strong>Endpoint:</strong> <strong><a
+			href=http://localhost:8080/api/questionnaires>/api/questionnaires</a></strong>
 	</p>
 	<p>
 		<strong>JSON Example:</strong>
@@ -193,7 +158,7 @@
 				"role": "USER",
 				"email": "pii@gmail.com"
 			}
-		},
+			},
 		{
 			"questionnaireId": 2,
 			"questionnaireTitle": "Tilojen viihtyisyys2",

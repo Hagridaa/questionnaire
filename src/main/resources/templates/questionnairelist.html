@@ -23,7 +23,7 @@
 		</tr>  
     	<tr th:each = "questionnaire: ${questionnaires}">
     		<td th:text="${questionnaire.questionnaireTitle} ">name</td>
-    	    <td><a th:href="@{/questions/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-danger" >Open the Questionnaire</a></td>
+    	    <td><a th:href="@{/questionnaires/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-danger" >Open the Questionnaire</a></td>
     				
     	</tr>
      </table>
