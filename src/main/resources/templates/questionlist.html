@@ -6,15 +6,12 @@
 </head>
 <body>
 	<div class="col-md-4">
-	<!--<h1 th:text="@{/questionnaire.name}"></h1>
-	<h2 th: text="@{/questionnaire.}"></h2>
-	<h4>Tällä kyselyllä selvitetään tuttujen suosittelemia tärppejä, joilla voi laajentaa tajuntaansa.</h4>-->
 	</div>
-	<table class="table table-striped">
-		<tr th:each="question: ${questions}">
-			<td th:text="${question.text}">Question</td>
-		</tr>
-	</table>
+	
+	<select th:field="*{questionnaire}">
+    <option th:value="${questionnaire.questionnaireId}" th:text="${questionnaire.questionnaireTitle">Question</option>
+     <option th:value="${questionnaire.questionnaireId}" th:text="${questionnaire.questionnaireTitle">Description</option>
+	</select>
 	<br>
 		<a href="/newquestion" class="btn btn-success">Add a new question</a>
 </body>

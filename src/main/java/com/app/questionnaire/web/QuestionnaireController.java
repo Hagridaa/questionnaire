@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.app.questionnaire.domain.Question;
+import com.app.questionnaire.domain.QuestionRepository;
 import com.app.questionnaire.domain.Questionnaire;
 import com.app.questionnaire.domain.QuestionnaireRepository;
 
@@ -20,19 +21,31 @@ import com.app.questionnaire.domain.QuestionnaireRepository;
 public class QuestionnaireController {
 		
 	@Autowired
-	private QuestionnaireRepository questionnaireRepository;
+	QuestionRepository questionRepository;
+	
+	@Autowired
+	QuestionnaireRepository questionnaireRepository;
 		
 		// JSON questionnaires
 		@RequestMapping(value="/api/questionnaires", method = RequestMethod.GET)
 			public @ResponseBody List<Questionnaire> getRestQuestionnaires() {
-		return (List<Questionnaire>) questionnaireRepository.findAll();
+				return (List<Questionnaire>) questionnaireRepository.findAll();
 		}
 
 		// RESTful service to retrieve an existing questionnaire by id
-	    @RequestMapping(value="/questionnaires/{id}", method = RequestMethod.GET)
+	    @RequestMapping(value="/api/questionnaires/{id}", method = RequestMethod.GET)
 	    public @ResponseBody Optional<Questionnaire> findQuestionnaireRest(@PathVariable("id") Long questionnaireId) {	
 	    	return questionnaireRepository.findById(questionnaireId);
 	    }
+	    
+		// Thymeleaf listing the questions
+		@RequestMapping(value="/questionnaires/{id}", method = RequestMethod.GET)
+		public String getQuestions(@PathVariable("id") Long questionnaireId, Model model) {
+			List<Question> questions = (List<Question>) questionRepository.findAll();
+				model.addAttribute("questionnaire", questionnaireRepository.findById(questionnaireId));
+				model.addAttribute("questions", questions);
+				return "questionlist";
+		}
 	    
 	    // Fetch all questionnaires from database
 		@RequestMapping(value = "/questionnaires", method = RequestMethod.GET)
