@@ -1,27 +1,23 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{../css/bootstrap.min.css}" />
 <title>Questionlist</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<div class="col-md-4">
-	<h1 class="display-4">Questions</h1>
-</div>
+<div class="jumbotron">
+	<h1 class=display-4 th:text="${questionnaire.questionnaireTitle}"></h1>
+	
+	<h3 th:text="${questionnaire.questionnaireDescription}"></h3>
+		</div>
 	<table class="table table-striped">
-				<tr>
-				<th><p class="lead">Title</th>
-				<th><p class="lead">Description</th>
-			</tr>
-			
-				<tr th:each="questionnaire : ${questionnaires}">
-		<td th:text="${questionnaire1.questionnaireTitle}">Title</td>
-		<td th:text="${questionnaire2.questionnaireDescription}">Description</td>
-		<td th:text="${questionnaire2.questionnaireDescription}">Description</td>
-		<td th:text="${questionnaire2.questionnaireDescription}">Description</td>
+		
+		<tr th:each="question : ${questions2}">
+			<td th:text="${question.questionText}">question</td>
 		</tr>
-		</table>
+	</table>
+		
 	<br>
 		<a href="/newquestion" class="btn btn-success">Add a new question</a>
 </body>

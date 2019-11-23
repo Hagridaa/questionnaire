@@ -1,5 +1,6 @@
 package com.app.questionnaire.web;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,21 +40,22 @@ public class QuestionnaireController {
 	    }
 	    
 		// Thymeleaf listing the questions
-		//@RequestMapping(value="/questionnaires/{id}", method = RequestMethod.GET)
-		//public String getQuestions(@PathVariable("id") Long questionnaireId, Model model) {
-			//model.addAttribute("questionnaire", questionnaireRepository.findById(questionnaireId));
-			//model.addAttribute("question", questionRepository.findAll());
-				//return "questionlist";
-	//	}
-	    
-		// Thymeleaf listing the questions
 		@RequestMapping(value="/questionnaires/{id}", method = RequestMethod.GET)
 		public String getQuestions(@PathVariable("id") Long questionnaireId, Model model) {
 			List<Question> questions = (List<Question>) questionRepository.findAll();
-				model.addAttribute("questionnaire", questionnaireRepository.findById(questionnaireId));
-				model.addAttribute("questions", questions);
+				model.addAttribute("questionnaire", questionnaireRepository.findById(questionnaireId).get());
+				List<Question> questions2 = new ArrayList<Question>();
+					
+				for (Question question: questions) {
+					if (question.getQuestionnaire().getQuestionnaireId().equals(questionnaireId)) {
+						questions2.add(question);
+					}
+				}
+				
+				model.addAttribute("questions2", questions2);
 				return "questionlist";
 		}
+
 	    
 	    // Fetch all questionnaires from database
 		@RequestMapping(value = "/questionnaires", method = RequestMethod.GET)
