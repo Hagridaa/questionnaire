@@ -51,12 +51,11 @@ public class QuestionnaireController {
 						questions2.add(question);
 					}
 				}
-				
+		
 				model.addAttribute("questions2", questions2);
 				return "questionlist";
 		}
 
-	    
 	    // Fetch all questionnaires from database
 		@RequestMapping(value = "/questionnaires", method = RequestMethod.GET)
 		public String getQuestionnaires(Model model) {
