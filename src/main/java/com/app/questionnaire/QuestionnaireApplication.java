@@ -71,6 +71,8 @@ public class QuestionnaireApplication {
 			Question question2 = new Question(null,"Kuinka viihtyisät tilat koulussamme mielestäsi on?", questionType1, questionnaire1);
 			questionRepository.save(question1);
 			questionRepository.save(question2);
+			
+			//questionlist1.add(question1);
 
 			
 			log.info("Test questions are: " + question1 + " and " + question2);
