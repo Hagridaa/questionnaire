@@ -39,6 +39,14 @@ public class QuestionnaireController {
 	    }
 	    
 		// Thymeleaf listing the questions
+		//@RequestMapping(value="/questionnaires/{id}", method = RequestMethod.GET)
+		//public String getQuestions(@PathVariable("id") Long questionnaireId, Model model) {
+			//model.addAttribute("questionnaire", questionnaireRepository.findById(questionnaireId));
+			//model.addAttribute("question", questionRepository.findAll());
+				//return "questionlist";
+	//	}
+	    
+		// Thymeleaf listing the questions
 		@RequestMapping(value="/questionnaires/{id}", method = RequestMethod.GET)
 		public String getQuestions(@PathVariable("id") Long questionnaireId, Model model) {
 			List<Question> questions = (List<Question>) questionRepository.findAll();

@@ -45,7 +45,6 @@ public class QuestionnaireApplication {
 			User user2 = new User(null, "admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN","moo@gmail.com");
 			userRepository.save(user1);
 			userRepository.save(user2);
-			log.info("Test users: " + user1 + " and " + user2);
 			
 			//luodaan uusi kysely
 			//Long questionnaireId, String questionnaireTitle, String questionnaireDescription,
@@ -57,9 +56,6 @@ public class QuestionnaireApplication {
 			Questionnaire questionnaire2 = new Questionnaire(null, "Tilojen moderniutta", "Tutkitaan tilojen moderniutta",questionlist2,user2);
 			questionnaireRepository.save(questionnaire1);
 			questionnaireRepository.save(questionnaire2);
-			List<Questionnaire> questionnaires = List.of(questionnaire1,questionnaire2);
-			log.info("Test questionnaires are: " + questionnaire1, questionnaire2);
-			log.info("Testlist is: "+ questionnaires);
 			
 			//luodaan uusi kysymys
 			//Long questionId, String questionText, Questiontype questiontype, Questionnaire questionnaire,
@@ -73,8 +69,8 @@ public class QuestionnaireApplication {
 			questionRepository.save(question2);
 
 			
-			log.info("Test questions are: " + question1 + " and " + question2);
-			log.info("Test questionlist is: " + questionlist1);
+			//log.info("Test questions are: " + question1 + " and " + question2);
+			//log.info("Test questionlist is: " + questionlist1);
 			
 //			Answer answer1 = new Answer(null,"Minusta tilat ovat modernit",question1);
 //			aRepository.save(answer1);
@@ -94,16 +90,14 @@ public class QuestionnaireApplication {
 			//Answer(Long answerId, String answerText, Question question
 			Answer answer3 = new Answer(null,"tilat ovat viihtyisät",question1);
 			Answer answer4 = new Answer(null,"tilat ovat modernit",question2);
-			
-			log.info("Answer1 is: " + answer4);
 
 			question1.setAnswers(List.of(answer3));
 			question2.setAnswers(List.of(answer4));
+			
 			 //configure objectMapper for pretty input
 	        objectMapper.configure(SerializationFeature.INDENT_OUTPUT, true);
 
 	        //write answerObj object to answer1.json file
-	        
 	        objectMapper.writeValue(new File("answer1.json"), List.of(answer3, answer4));
 	        
 		};

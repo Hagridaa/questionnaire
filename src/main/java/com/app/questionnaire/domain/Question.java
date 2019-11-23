@@ -51,6 +51,15 @@ public class Question {
 		this.questionnaire = questionnaire;
 		this.answers = answers;
 	}
+	
+	public Question(Long questionId, String questionText, Questiontype questiontype,
+			List<Answer> answers) {
+		super();
+		this.questionId = questionId;
+		this.questionText = questionText;
+		this.questiontype = questiontype;
+		this.answers = answers;
+	}
 
 	public Question(Long questionId, String questionText, Questiontype questiontype, Questionnaire questionnaire) {
 		super();

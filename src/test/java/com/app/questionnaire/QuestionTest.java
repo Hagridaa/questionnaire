@@ -26,6 +26,7 @@ public class QuestionTest {
 		System.out.println("tulosta testi kysymys1: " + question.toString());
 		assertThat(question.getQuestionText()).isNotEmpty();
 		}
+
 	
 	@Test
 	public void createNewQuestion_questionShouldBeCorrect() {
@@ -34,5 +35,12 @@ public class QuestionTest {
 		Question question = new Question(null, "Onko maito hyvää?", new Questiontype(null,"text"),questionnaire1);
 		System.out.println("tulosta testi kysymys2: " + question.toString());
 		assertEquals("Onko maito hyvää?", question.getQuestionText());
+		}
+	
+	@Test
+	public void createNewUser_userShouldBeEqual() {
+		User user4 = new User(null, "user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER", "piippo@gmail.com");
+		System.out.println("tulosta testi user4: " + user4.toString());
+		assertThat(user4.getUsername()).isEqualTo("user4");
 		}
 }

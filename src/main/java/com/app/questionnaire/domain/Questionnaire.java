@@ -49,8 +49,15 @@ public class Questionnaire {
 		this.user = user;
 	}
 	
+	public Questionnaire(Long questionnaireId, String questionnaireTitle, String questionnaireDescription,
+			List<Question> questions) {
+		super();
+		this.questionnaireId = questionnaireId;
+		this.questionnaireTitle = questionnaireTitle;
+		this.questionnaireDescription = questionnaireDescription;
+		this.questions = questions;
+	}
 	
-
 	public Questionnaire(Long questionnaireId, String questionnaireTitle, String questionnaireDescription, User user) {
 		super();
 		this.questionnaireId = questionnaireId;
@@ -65,6 +72,13 @@ public class Questionnaire {
 		this.questionnaireTitle = questionnaireTitle;
 		this.questionnaireDescription = questionnaireDescription;
 		this.questions = questions;
+		this.user = user;
+	}
+	
+	public Questionnaire(String questionnaireTitle, String questionnaireDescription, User user) {
+		super();
+		this.questionnaireTitle = questionnaireTitle;
+		this.questionnaireDescription = questionnaireDescription;
 		this.user = user;
 	}
 
