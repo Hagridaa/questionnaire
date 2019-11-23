@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{../css/bootstrap.min.css}" />
 <title>Questionlist</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
@@ -16,10 +16,9 @@
 			</tr>
 			
 				<tr th:each="questionnaire : ${questionnaires}">
-		<td th:text="${questionnaire1.questionnaireTitle}">Title</td>
-		<td th:text="${questionnaire2.questionnaireDescription}">Description</td>
-		<td th:text="${questionnaire2.questionnaireDescription}">Description</td>
-		<td th:text="${questionnaire2.questionnaireDescription}">Description</td>
+		<td th:text="${questionnaire.questionnaireTitle}">Title</td>
+		<td th:text="${questionnaire.questionnaireDescription}">Description</td>
+		<td th:text="${questionnaire.questionnaireDescription}">Description</td>
 		</tr>
 		</table>
 	<br>

@@ -36,4 +36,5 @@ public class QuestionController {
 	questionRepository.save(question);
 	return "redirect:/questionlist";
 	}
+
 }

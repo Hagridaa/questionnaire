@@ -96,6 +96,8 @@ public class QuestionnaireApplication {
 			//Answer(Long answerId, String answerText, Question question
 			Answer answer3 = new Answer(null,"tilat ovat viihtyisät",question1);
 			Answer answer4 = new Answer(null,"tilat ovat modernit",question2);
+			aRepository.save(answer3);
+			aRepository.save(answer4);
 			
 			log.info("Answer1 is: " + answer4);
 

@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface QuestionRepository extends CrudRepository<Question, Long> {
 
-//	Optional<Question> findByname(String string);
+	Optional<Question> findByQuestionId(Long Id);
 	
 
 }

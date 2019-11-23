@@ -1,5 +1,5 @@
 [ {
-  "answerId" : null,
+  "answerId" : 6,
   "answerText" : "tilat ovat viihtyisät",
   "question" : {
     "questionId" : 4,
@@ -22,7 +22,7 @@
     }
   }
 }, {
-  "answerId" : null,
+  "answerId" : 7,
   "answerText" : "tilat ovat modernit",
   "question" : {
     "questionId" : 5,
