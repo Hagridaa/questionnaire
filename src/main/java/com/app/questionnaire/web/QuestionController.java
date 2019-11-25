@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -29,17 +30,19 @@ public class QuestionController {
 	}
 
     // Thymeleaf add
-    @RequestMapping(value ="/newquestion", method = RequestMethod.GET)
-	public String getNewQuestionForm(Model model) {
+    @RequestMapping(value ="/newquestion/{id}", method = RequestMethod.GET) // lisää kysymyksen tietyn id:n mukaan
+	public String getNewQuestionForm(@PathVariable("id") Long questionnaireId, Model model) {
 		model.addAttribute("question", new Question());
+		model.addAttribute("questionnaireId", questionnaireId);
 		return "addquestionform";
 	}
     
     // Thymeleaf save a new question
-    @RequestMapping(value = "/savequestion", method = RequestMethod.POST)
-    public String saveQuestion(@ModelAttribute Question question) {
+    @RequestMapping(value = "/savequestion/{id}", method = RequestMethod.POST) // tallentaa kysymyksen tietyn id:n mukaan
+    public String saveQuestion(@PathVariable("id") Long questionnaireId, @ModelAttribute Question question) {
+    question.setQuestionnaire(questionnaireRepository.findById(questionnaireId).get()); // haetaan tietyn kyselyn id
 	questionRepository.save(question);
-	return "redirect:/questionnaires";
+	return "redirect:/questionnaires/" + questionnaireId; // uudelleenohjaa tiettyyn kyselyyn id:n mukaan
 	
 	}
     

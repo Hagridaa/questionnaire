@@ -9,7 +9,7 @@
 <div class="jumbotron">
 <h1 class="display-4">New Question</h1><br></div>
 <p>
-	<form action="#" th:action="@{/savequestion}" th:object= ${question} method="post">
+	<form action="#" th:action="@{/savequestion/{id}(id=${questionnaireId})}" th:object= ${question} method="post">
 	<input type="hidden" th:field="${question.questionId}" class="form-control"/>
 	<p>Write your question here: <input type="text" th:field="${question.questionText}"/></p>
 	

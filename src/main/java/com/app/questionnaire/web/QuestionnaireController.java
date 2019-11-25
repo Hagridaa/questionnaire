@@ -39,6 +39,12 @@ public class QuestionnaireController {
 	    	return questionnaireRepository.findById(questionnaireId);
 	    }
 	    
+		// RESTful service to retrieve an existing questionnaire by id
+	 //   @RequestMapping(value="/questionnaires/{id}/questions", method = RequestMethod.GET)
+	  //  public @ResponseBody Optional<Questionnaire> findQuestionnaireIdRest(@PathVariable("id") Long questionnaireId) {	
+	    //	return questionnaireRepository.findById(questionnaireId);
+	    //}
+	    
 		// Thymeleaf listing the questions
 		@RequestMapping(value="/questionnaires/{id}", method = RequestMethod.GET)
 		public String getQuestions(@PathVariable("id") Long questionnaireId, Model model) {
