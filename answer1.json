@@ -1,8 +1,8 @@
 [ {
-  "answerId" : 6,
+  "answerId" : 9,
   "answerText" : "tilat ovat viihtyisät",
   "question" : {
-    "questionId" : 4,
+    "questionId" : 7,
     "questionText" : "Ovatko tilat viihtyisät?",
     "questiontype" : {
       "questiontypeId" : 3,
@@ -22,10 +22,10 @@
     }
   }
 }, {
-  "answerId" : 7,
+  "answerId" : 10,
   "answerText" : "tilat ovat modernit",
   "question" : {
-    "questionId" : 5,
+    "questionId" : 8,
     "questionText" : "Kuinka viihtyisät tilat koulussamme mielestäsi on?",
     "questiontype" : {
       "questiontypeId" : 3,

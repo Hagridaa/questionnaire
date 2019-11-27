@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Bean;
 
 import com.app.questionnaire.domain.Answer;
 import com.app.questionnaire.domain.AnswerRepository;
+import com.app.questionnaire.domain.Option;
+import com.app.questionnaire.domain.OptionRepository;
 import com.app.questionnaire.domain.Question;
 import com.app.questionnaire.domain.QuestionRepository;
 import com.app.questionnaire.domain.Questionnaire;
@@ -35,7 +37,7 @@ public class QuestionnaireApplication {
 	
 //  testidatan luonti H2-testitietokantaan aina sovelluksen käynnistyessä
 	@Bean
-	public CommandLineRunner Demo(QuestiontypeRepository questionTypeRepository, UserRepository userRepository, QuestionnaireRepository questionnaireRepository, QuestionRepository questionRepository, AnswerRepository aRepository) { 
+	public CommandLineRunner Demo(QuestiontypeRepository questionTypeRepository, UserRepository userRepository, QuestionnaireRepository questionnaireRepository, QuestionRepository questionRepository, AnswerRepository aRepository, OptionRepository oRepository) { 
 		return (args) -> {
 			log.info("save a couple of users,questionnaires for users and questions for questionnaires");
 			
@@ -65,7 +67,19 @@ public class QuestionnaireApplication {
 			//Long questionId, String questionText, Questiontype questiontype, Questionnaire questionnaire,
 			//List<Answer> answers
 			Questiontype questionType1 = new Questiontype(null,"text");
+			Questiontype questionType2 = new Questiontype(null,"option");
 			questionTypeRepository.save(questionType1);
+			questionTypeRepository.save(questionType2);
+			
+			//Luodaan uusi option lista
+			//Long optionId, String optionText, Questiontype questiontype
+			Option option1 = new Option(null, "valinta1",questionType2);
+			Option option2 = new Option(null, "valinta2",questionType2);
+			oRepository.save(option1);
+			oRepository.save(option2);
+			log.info("Test options are: " + option1 + option2 );
+			List<Option> optionlist1 = List.of(option1,option2);
+			log.info("Test optionlist is: " + optionlist1);
 			
 			Question question1 = new Question(null, "Ovatko tilat viihtyisät?", questionType1, questionnaire1);
 			Question question2 = new Question(null,"Kuinka viihtyisät tilat koulussamme mielestäsi on?", questionType1, questionnaire1);
