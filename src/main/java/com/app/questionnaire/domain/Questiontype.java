@@ -5,12 +5,14 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Questiontype {
@@ -23,16 +25,14 @@ public class Questiontype {
 	@Column
 	private String questiontypeName;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "questiontype")
-	@JsonIgnore
+	@OneToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY, mappedBy = "questiontype")
+	@JsonManagedReference
 	private List<Question> questions;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "questiontype")
 	@JsonIgnore
 	private List<Option> options;
 	
-	
-
 	public Questiontype(Long questiontypeId, String questiontypeName, List<Question> questions, List<Option> options) {
 		super();
 		this.questiontypeId = questiontypeId;

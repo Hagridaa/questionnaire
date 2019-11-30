@@ -31,6 +31,31 @@ public class Option {
 		this.questiontype = questiontype;
 	}
 
+	
+	public Long getOptionId() {
+		return optionId;
+	}
+
+	public void setOptionId(Long optionId) {
+		this.optionId = optionId;
+	}
+
+	public String getOptionText() {
+		return optionText;
+	}
+
+	public void setOptionText(String optionText) {
+		this.optionText = optionText;
+	}
+
+	public Questiontype getQuestiontype() {
+		return questiontype;
+	}
+
+	public void setQuestiontype(Questiontype questiontype) {
+		this.questiontype = questiontype;
+	}
+
 	@Override
 	public String toString() {
 		return "Option [optionId=" + optionId + ", optionText=" + optionText + ", questiontype=" + questiontype + "]";

@@ -70,7 +70,6 @@ public class QuestionnaireApplication {
 			Questiontype questionType2 = new Questiontype(null,"option");
 			questionTypeRepository.save(questionType1);
 			questionTypeRepository.save(questionType2);
-			
 			//Luodaan uusi option lista
 			//Long optionId, String optionText, Questiontype questiontype
 			Option option1 = new Option(null, "valinta1",questionType2);
