@@ -71,15 +71,9 @@ public class QuestionnaireApplication {
 			questionTypeRepository.save(questionType1);
 			questionTypeRepository.save(questionType2);
 			
-			//Luodaan uusi option lista
-			//Long optionId, String optionText, Questiontype questiontype
-			Option option1 = new Option(null, "valinta1",questionType2);
-			Option option2 = new Option(null, "valinta2",questionType2);
-			oRepository.save(option1);
-			oRepository.save(option2);
-			log.info("Test options are: " + option1 + option2 );
-			List<Option> optionlist1 = List.of(option1,option2);
-			log.info("Test optionlist is: " + optionlist1);
+			List<Questiontype> questiontypelist = List.of(questionType1, questionType2);
+			
+		
 			
 			Question question1 = new Question(null, "Ovatko tilat viihtyisät?", questionType1, questionnaire1);
 			Question question2 = new Question(null,"Kuinka viihtyisät tilat koulussamme mielestäsi on?", questionType1, questionnaire1);
@@ -87,6 +81,17 @@ public class QuestionnaireApplication {
 			questionRepository.save(question2);
 			
 			//questionlist1.add(question1);
+			
+			//Luodaan uusi option lista
+			//Long optionId, String optionText, Questiontype questiontype
+			Option option1 = new Option(null, "valinta1",questionType2, question1);
+			Option option2 = new Option(null, "valinta2",questionType2, question1);
+			oRepository.save(option1);
+			oRepository.save(option2);
+			
+			log.info("Test options are: " + option1 + option2 );
+			List<Option> optionlist1 = List.of(option1,option2);
+			log.info("Test optionlist is: " + optionlist1);
 
 			
 			log.info("Test questions are: " + question1 + " and " + question2);

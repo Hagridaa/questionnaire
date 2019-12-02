@@ -48,6 +48,81 @@
 		</code>
 	</pre>
 	
+		<h2>Question By Id</h2>
+	<p>
+	<strong>Method:</strong> GET <strong>Endpoint:</strong> <strong><a
+			href=http://localhost:8080/api/questions/5>/api/questions/{id}</a></strong>
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre>
+		<code>
+		{
+			"questionId" : 5,
+			"questionText" : "Ovatko tilat viihtyisät?",
+			"questionnaire" : {
+				"questionnaireId" : 1
+		}
+		}
+		</code>
+	</pre>
+			<h2>Get options</h2>
+	<p>
+	<strong>Method:</strong> GET <strong>Endpoint:</strong> <strong><a
+			href=http://localhost:8080/api/options>/api/options</a></strong>
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre>
+		<code>
+		[{
+			"question" : {
+				"questionId" : 5
+		},
+			"optionId" : 7,
+			"optionText" : "valinta1"
+		},
+		{
+			"question" : {
+				"questionId" : 5
+		},
+		{
+			"optionId" : 8,
+			"optionText" : "valinta2"
+		}]
+
+		</code>
+	</pre>
+				<h2>Get options by Question Id</h2>
+	<p>
+	<strong>Method:</strong> GET <strong>Endpoint:</strong> <strong><a
+			href=http://localhost:8080/api/questions/5/options>/api/questions/{id}/options</a></strong>
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre>
+		<code>
+		[{
+			"question" : {
+				"questionId" : 5
+		},
+			"optionId" : 7,
+			"optionText" : "valinta1"
+		},
+		{
+			"question" : {
+				"questionId" : 5
+		},
+			"optionId" : 8,
+			"optionText" : "valinta2"
+		}]
+
+		</code>
+	</pre>
+	
 		<h2>URL for save answer</h2>
 	<p>
 		<strong>Method:</strong> POST <strong>Endpoint:</strong> <strong><a

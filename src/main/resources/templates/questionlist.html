@@ -19,6 +19,8 @@
 	</table>
 		
 	<br>
-		<a th:href="@{/newquestion/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-success">Add a new question</a>
+		
+		 <a th:href="@{/newquestion/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-success">Add a new text question</a>
+		 <a th:href="@{/newoptionquestion/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-success">Add a new multiple choice question</a>
 </body>
 </html>

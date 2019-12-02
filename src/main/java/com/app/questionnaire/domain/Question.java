@@ -36,6 +36,10 @@ public class Question {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
 	@JsonIgnore
 	private List<Answer> answers;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
+	@JsonIgnore
+	private List<Option> options;
 
 	public Question() {
 		super();
@@ -43,15 +47,26 @@ public class Question {
 	
 
 	public Question(Long questionId, String questionText, Questiontype questiontype, Questionnaire questionnaire,
-			List<Answer> answers) {
+			List<Answer> answers, List<Option> options) {
 		super();
 		this.questionId = questionId;
 		this.questionText = questionText;
 		this.questiontype = questiontype;
 		this.questionnaire = questionnaire;
 		this.answers = answers;
+		this.options = options;
 	}
 	
+	public List<Option> getOptions() {
+		return options;
+	}
+
+
+	public void setOptions(List<Option> options) {
+		this.options = options;
+	}
+
+
 	public Question(Long questionId, String questionText, Questiontype questiontype,
 			List<Answer> answers) {
 		super();
@@ -123,11 +138,15 @@ public class Question {
 		this.answers = answers;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Question [questionId=" + questionId + ", questionText=" + questionText + ", questiontype="
-				+ questiontype + ", questionnaire=" + questionnaire + ", answers=" + answers + "]";
+				+ questiontype + ", questionnaire=" + questionnaire + ", answers=" + answers + ", options=" + options
+				+ "]";
 	}
+
+	
 	
 	
 
