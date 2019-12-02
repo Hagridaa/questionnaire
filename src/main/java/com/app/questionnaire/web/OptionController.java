@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -139,12 +140,32 @@ public class OptionController {
 				return (List<Option>) optionRepository.findAll();
 		}
 		
+		// get JSON option by id
+		@RequestMapping(value="/api/options/{id}", method = RequestMethod.GET)
+		public @ResponseBody Optional<Option> findOptionById(@PathVariable("id") Long optionId) {
+			return optionRepository.findById(optionId);
+		}
+		
 		// JSON get options by question id
 	 	@RequestMapping(value="/api/questions/{id}/options", method = RequestMethod.GET)
 		public @ResponseBody List<Option> findAllOptionsByQuestionId(@PathVariable("id") Long questionId) {
 			Optional<Question> question = questionRepository.findById(questionId);
 			return optionRepository.findAllByQuestion(question);
 		}
+	 	
+	 /*	// Thymeleaf save a new option to question
+	    @RequestMapping(value = "/saveoption/{id}", method = RequestMethod.POST) // tallentaa optionin tietyn id:n mukaan
+	    public @ResponseBody String saveOption(@PathVariable("id") Long questionId, @ModelAttribute Option option) {
+	    option.setQuestion(questionRepository.findById(questionId).get()); // haetaan tietyn kysymyksen id
+		optionRepository.save(option);
+		return "redirect:/questions/" + questionId; // uudelleenohjaa tiettyyn kysymykseen id:n mukaan
+		
+		}*/
+	 	
+	 	@RequestMapping( value = "/saveoption", method = RequestMethod.POST )
+	    public Option save(@RequestBody Option option){
+	        return optionRepository.save(option);
+	    }
 	    
 	}
 
