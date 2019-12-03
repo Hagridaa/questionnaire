@@ -2,46 +2,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{../css/bootstrap.min.css}" />
-<title>Add a optionquestion</title>
+<title>Add a question</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
 <div class="jumbotron">
-<h1 class="display-4">New OptionQuestion</h1><br></div>
+<h1 class="display-4">New Option</h1><br></div>
 <p>
-	<!-- tässä lisätään monivalintakysymys -->
-	<form action="#" th:action="@{/saveoptionquestion/{id}(id=${questionnaireId})}" th:object= ${question} method="post">
-	<input type="hidden" th:field="${question.questionId}" class="form-control"/>
+	<form action="#" th:action="@{/saveoption/{id}(id=${questionId})}" th:object= ${option} method="post">
+	<input type="hidden" th:field="${option.optionId}" class="form-control"/>
+	<p>Write a new option here: <input type="text" th:field="${option.optionText}"/></p>
 	
-	<p>Write your question here: <input type="text" th:field="${question.questionText}"/></p>
-	
-	
-	
-	<!-- tässä lisätään monivalintakysymyksen vaihtoehdot -->
-	 <h3>Options</h3><br>
-    <button type="submit" class="btn btn-info"  name="addOption">Add Option</button><br>
-    <table>
-      <tr th:each="option, rowStat : *{options}">
-        <td><input type="text" th:field="*{options[__${rowStat.index}__].label}" placeholder="Option..."/></td>
-      </tr>
-    </table>
-	<br>
-	
-	 <table>
-    	<tr>
-    		<td>New option: <input type="text" th:field="${option.optionText}" /></td>
-        </tr>
-      </table><br>
-	
-	<!--  <th:block th:fragment="option-row">
-        <tr th:id="'row'+${option.optionId}">
-            <td th:text=${option.optionText}></td>
-            <!-- Whatever other element you need.
-        </tr>
-    </th:block>
-     -->
-	
-	<!-- tässä SUBMITATAAN kaikki yhdellä kertaa controllerin tallennettavaksi -->
 	<p><input type="submit" class="btn btn-success" value="Submit" /> <input type="reset" class="btn btn-success" value="Reset" /></p>
 	</form> 
 </body>

@@ -12,15 +12,19 @@
 	<h3 th:text="${questionnaire.questionnaireDescription}"></h3>
 		</div>
 	<table class="table table-striped">
-		
+		<tr>
+		    <th>Question</th>
+		    <th>Add option</th>
+		</tr> 
 		<tr th:each="question : ${questions2}">
 			<td th:text="${question.questionText}">question</td>
+			<td><a th:href="@{/newoption/{id}(id=${question.questionId})}" class="btn btn-danger" >Add option</a></td>
 		</tr>
 	</table>
 		
 	<br>
 		
 		 <a th:href="@{/newquestion/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-success">Add a new text question</a>
-		 <a th:href="@{/newoptionquestion/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-success">Add a new multiple choice question</a>
+		<!--  <a th:href="@{/newoptionquestion/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-success">Add a new multiple choice question</a> -->
 </body>
 </html>
