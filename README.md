@@ -33,6 +33,15 @@ V4 Kyselyn kysymykset voi hakea.
 
 V5 Kyselyyn voi lisätä kysymyksiä. 
 
+Sprintti2 vaatimukset:
+
+V1 
+Lisätä kyselyn, jossa on kysymyksiä. Kysymykset voivat olla tyyppiä avoin teksti, multiple choice, checkbox,  skaala 1-5 . Kysymykset voivat olla vapaaehtoisia tai pakollisia. 
+
+V3 
+Kyselyyn annetut kaikki vastaukset voi hakea. 
+ 
+
 ![](images/1.JPG)
 ![](images/2.JPG)
 ![](images/3.JPG)
