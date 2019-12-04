@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sign up</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" />
+</head>
+<body class="text-center">>
+<h1>Here you can register for questionnaireapp user</h1>
+	
+<form action="#" th:action="@{/adduser}"  th:object= ${user} method="post">
+<table class="table table-striped table-hover form-narrow ">
+
+<!-- Long id, String username, String passwordHass, String role -->
+					<thead>
+                        <tr>
+                            <th>username</th>
+                            <th th:if="${#fields.hasErrors('username')}">Error</th>
+                            <th>password</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+	                    <tr>
+	                    	<td><input type="text" th:field="${user.username}" /></td>
+	                    	<td th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Generic Error</td>
+	                    	<td><input type="password" th:field="${user.passwordHass}" /></td>
+	                    	<!-- input type password tekee sen, että salasana "palloina" -->
+	                    	<td><input type="hidden" th:field="${user.role}" /></td>
+	                    </tr>
+                    </tbody>
+		</table>
+		<input type="submit" value="Submit" class="btn btn-success btn-lg"/>
+		</form>
+			
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    	<script th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+	
+</body>
+</html>
