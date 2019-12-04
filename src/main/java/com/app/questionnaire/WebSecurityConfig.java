@@ -32,23 +32,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 @Override
 protected void configure(HttpSecurity http) throws Exception{
 	http
-	.authorizeRequests().antMatchers("/css/**","/webjars/**", "/adduser").permitAll(); // Enable css when logged out
-//	   .anyRequest().authenticated()
-//    .and()
+	.authorizeRequests().antMatchers("/css/**","/webjars/**", "/adduser","/","/login","/logout").permitAll() // Enable css when logged out
+	   .anyRequest().authenticated()
+    .and()
 //	.authorizeRequests().antMatchers("/delete/{id}","/edit/{id}").hasAuthority("ADMIN")
 //	.and()
 //	.authorizeRequests().antMatchers("/addOPTION").hasAuthority("USER")
 //	.and()
-//	.authorizeRequests().antMatchers("/questionnairelist").hasAuthority("USER")
-// 	.and()
-// .formLogin().
-//	.and
-// loginPage("/login")
-//     .defaultSuccessUrl("/questionnairelist")
-//     .and()
-// .logout()
-// .logoutSuccessUrl("/")
-//     .permitAll();	
+	.authorizeRequests().antMatchers("/questionnairelist").hasAuthority("USER")
+	.and()
+.formLogin()
+ .loginPage("/login")
+    .defaultSuccessUrl("/questionnairelist")
+     .and()
+ .logout()
+ .logoutSuccessUrl("/")
+     .permitAll();	
 //	
 }
 
