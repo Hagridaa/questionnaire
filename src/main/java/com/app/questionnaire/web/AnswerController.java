@@ -30,7 +30,7 @@ public class AnswerController {
 	
 	@RequestMapping(value="/allanswers", method = RequestMethod.GET)
 	public Iterable<Answer> findAllAnswers() {
-		return aRepository.findAll();
+		return aRepository.findallAnswers();
 	}
 	
 	@RequestMapping(value="/saveanswer", method = RequestMethod.POST, consumes="application/json")

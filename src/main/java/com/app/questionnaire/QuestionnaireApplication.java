@@ -122,7 +122,7 @@ public class QuestionnaireApplication {
 
 	        //write answerObj object to answer1.json file
 	        
-	        objectMapper.writeValue(new File("answer1.json"), List.of(answer3, answer4));
+	        objectMapper.writeValue(new File("answer2.json"), List.of(answer3, answer4));
 	        
 		};
 	}
