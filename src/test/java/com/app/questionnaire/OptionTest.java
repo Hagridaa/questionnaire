@@ -24,10 +24,11 @@ public class OptionTest {
 	public void createNewOption() {
 		
 		//Long optionId, String optionText, Questiontype questiontype
-		Questiontype questionType1 = new Questiontype(null,"option");
-		Option option1 = new Option(null, "valinta1",questionType1);
-		Option option2 = new Option(null, "valinta2",questionType1);
-		Option option3 = new Option(null, "valinta3",questionType1);
+		Questiontype questionType2 = new Questiontype(null,"option");
+		Question question1 = new Question("Mikä on fiiliksesi tänään?", questionType2);
+		Option option1 = new Option(null, "valinta1",questionType2, question1);
+		Option option2 = new Option(null, "valinta2",questionType2, question1);
+		Option option3 = new Option(null, "valinta3",questionType2, question1);
 		List<Option> optionlist1 = List.of(option1,option2,option3);
 		assertThat(optionlist1).isNotEmpty();
 		assertThat(option1).isNotEqualTo(option2);
@@ -53,15 +54,24 @@ public class OptionTest {
 		//Long questionId, String questionText, Questiontype questiontype, Questionnaire questionnaire,
 		Questiontype questionType2 = new Questiontype(null,"option");
 		
+		Question question1 = new Question("Mikä on fiiliksesi tänään?", questionType2);
+		
 		//Luodaan uusi option lista
 		//Long optionId, String optionText, Questiontype questiontype
-		Option option1 = new Option(null, "valinta1",questionType2);
-		Option option2 = new Option(null, "valinta2",questionType2);
+		Option option1 = new Option(null, "valinta1",questionType2, question1);
+		Option option2 = new Option(null, "valinta2",questionType2, question1);
 		List<Option> optionlist1 = List.of(option1,option2);
+		
+		/*
+		 * this.optionId = optionId;
+		this.optionText = optionText;
+		this.questiontype = questiontype;
+		this.question = question;
+		 */
 		
 		questionType2.setOptions(optionlist1);
 		
-		Question question1 = new Question(null, "Ovatko tilat viihtyisät?", questionType2, questionnaire1);
+		Question question2 = new Question(null, "Ovatko tilat viihtyisät?", questionType2, questionnaire1);
 		
 		assertThat(question1.getQuestiontype().getOptions()).isEqualTo(optionlist1);
 	

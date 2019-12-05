@@ -34,9 +34,8 @@ public class Question {
 	@JoinColumn(name = "questionnaireId")
 	private Questionnaire questionnaire;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
-	//@JsonBackReference
 	@JsonManagedReference
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
 	private List<Option> options;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
