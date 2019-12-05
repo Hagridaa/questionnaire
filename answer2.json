@@ -1,17 +1,17 @@
 [ {
-  "answerId" : 16,
+  "answerId" : 9,
   "answerText" : "tilat ovat viihtyisät",
   "question" : {
-    "questionId" : 5,
-    "questionText" : "Miten kurssien työelämäyhteys tuotu esille?",
+    "questionId" : 7,
+    "questionText" : "Ovatko tilat viihtyisät?",
     "questiontype" : {
       "questiontypeId" : 3,
       "questiontypeName" : "text"
     },
     "questionnaire" : {
       "questionnaireId" : 1,
-      "questionnaireTitle" : "Tutkimme Haaga-Helian kurssitarjonnan työelämäyhteyttä sekä opiskelijoiden tyytyväisyyttä kurssivalikoimaan",
-      "questionnaireDescription" : "Kyselyyn vastaaminen vie 2-3 minuuttia. Kiitos arvokkaista vastauksistasi!",
+      "questionnaireTitle" : "Tilojen viihtyisyys",
+      "questionnaireDescription" : "Tutkitaan tilojen viihtyisyyttä",
       "user" : {
         "userId" : 1,
         "username" : "user",
@@ -19,23 +19,22 @@
         "role" : "USER",
         "email" : "pii@gmail.com"
       }
-    },
-    "options" : null
+    }
   }
 }, {
-  "answerId" : 17,
+  "answerId" : 10,
   "answerText" : "tilat ovat modernit",
   "question" : {
-    "questionId" : 6,
-    "questionText" : "Oletko suorittanut kursseja?",
+    "questionId" : 8,
+    "questionText" : "Kuinka viihtyisät tilat koulussamme mielestäsi on?",
     "questiontype" : {
-      "questiontypeId" : 4,
-      "questiontypeName" : "option"
+      "questiontypeId" : 3,
+      "questiontypeName" : "text"
     },
     "questionnaire" : {
       "questionnaireId" : 1,
-      "questionnaireTitle" : "Tutkimme Haaga-Helian kurssitarjonnan työelämäyhteyttä sekä opiskelijoiden tyytyväisyyttä kurssivalikoimaan",
-      "questionnaireDescription" : "Kyselyyn vastaaminen vie 2-3 minuuttia. Kiitos arvokkaista vastauksistasi!",
+      "questionnaireTitle" : "Tilojen viihtyisyys",
+      "questionnaireDescription" : "Tutkitaan tilojen viihtyisyyttä",
       "user" : {
         "userId" : 1,
         "username" : "user",
@@ -43,7 +42,6 @@
         "role" : "USER",
         "email" : "pii@gmail.com"
       }
-    },
-    "options" : null
+    }
   }
 } ]

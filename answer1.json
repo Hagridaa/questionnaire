@@ -1,47 +1,15 @@
 [ {
-  "answerId" : 9,
+  "answerId" : null,
   "answerText" : "tilat ovat viihtyisät",
   "question" : {
-    "questionId" : 5,
-    "questionText" : "Ovatko tilat viihtyisät?",
-    "questiontype" : {
-      "questiontypeId" : 3,
-      "questiontypeName" : "text"
-    },
-    "questionnaire" : {
-      "questionnaireId" : 1,
-      "questionnaireTitle" : "Tilojen viihtyisyys",
-      "questionnaireDescription" : "Tutkitaan tilojen viihtyisyyttä",
-      "user" : {
-        "userId" : 1,
-        "username" : "user",
-        "passwordHass" : "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
-        "role" : "USER",
-        "email" : "pii@gmail.com"
-      }
+    "questionId" : 7
     }
-  }
-}, {
-  "answerId" : 10,
+  },
+  {
+  "answerId" : null,
   "answerText" : "tilat ovat modernit",
   "question" : {
-    "questionId" : 6,
-    "questionText" : "Kuinka viihtyisät tilat koulussamme mielestäsi on?",
-    "questiontype" : {
-      "questiontypeId" : 3,
-      "questiontypeName" : "text"
-    },
-    "questionnaire" : {
-      "questionnaireId" : 1,
-      "questionnaireTitle" : "Tilojen viihtyisyys",
-      "questionnaireDescription" : "Tutkitaan tilojen viihtyisyyttä",
-      "user" : {
-        "userId" : 1,
-        "username" : "user",
-        "passwordHass" : "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
-        "role" : "USER",
-        "email" : "pii@gmail.com"
-      }
-    }
+    "questionId" : 8
   }
-} ]
+} 
+]
