@@ -1,0 +1,49 @@
+[ {
+  "answerId" : 16,
+  "answerText" : "tilat ovat viihtyisät",
+  "question" : {
+    "questionId" : 5,
+    "questionText" : "Miten kurssien työelämäyhteys tuotu esille?",
+    "questiontype" : {
+      "questiontypeId" : 3,
+      "questiontypeName" : "text"
+    },
+    "questionnaire" : {
+      "questionnaireId" : 1,
+      "questionnaireTitle" : "Tutkimme Haaga-Helian kurssitarjonnan työelämäyhteyttä sekä opiskelijoiden tyytyväisyyttä kurssivalikoimaan",
+      "questionnaireDescription" : "Kyselyyn vastaaminen vie 2-3 minuuttia. Kiitos arvokkaista vastauksistasi!",
+      "user" : {
+        "userId" : 1,
+        "username" : "user",
+        "passwordHass" : "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
+        "role" : "USER",
+        "email" : "pii@gmail.com"
+      }
+    },
+    "options" : null
+  }
+}, {
+  "answerId" : 17,
+  "answerText" : "tilat ovat modernit",
+  "question" : {
+    "questionId" : 6,
+    "questionText" : "Oletko suorittanut kursseja?",
+    "questiontype" : {
+      "questiontypeId" : 4,
+      "questiontypeName" : "option"
+    },
+    "questionnaire" : {
+      "questionnaireId" : 1,
+      "questionnaireTitle" : "Tutkimme Haaga-Helian kurssitarjonnan työelämäyhteyttä sekä opiskelijoiden tyytyväisyyttä kurssivalikoimaan",
+      "questionnaireDescription" : "Kyselyyn vastaaminen vie 2-3 minuuttia. Kiitos arvokkaista vastauksistasi!",
+      "user" : {
+        "userId" : 1,
+        "username" : "user",
+        "passwordHass" : "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6",
+        "role" : "USER",
+        "email" : "pii@gmail.com"
+      }
+    },
+    "options" : null
+  }
+} ]

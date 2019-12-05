@@ -102,7 +102,7 @@ public class OptionController {
 	    public String saveOption(@PathVariable("id") Long questionId, @ModelAttribute Option option) {
 	    option.setQuestion(questionRepository.findById(questionId).get()); // haetaan tietyn kyselyn id
 		optionRepository.save(option);
-		return "redirect:../questionnaires/"; // uudelleenohjaa tiettyyn kyselyyn id:n mukaan
+		return "redirect:../questionnaires"; // uudelleenohjaa tiettyyn kyselyyn id:n mukaan
 		
 		}
 	    

@@ -55,7 +55,7 @@ public class QuestionnaireApplication {
 			List<Question> questionlist1 = new ArrayList<>();
 			List<Question> questionlist2 = new ArrayList<>();
 			
-			Questionnaire questionnaire1 = new Questionnaire(null, "Tilojen viihtyisyys", "Tutkitaan tilojen viihtyisyyttä",questionlist1,user1);
+			Questionnaire questionnaire1 = new Questionnaire(null, "Tutkimme Haaga-Helian kurssitarjonnan työelämäyhteyttä sekä opiskelijoiden tyytyväisyyttä kurssivalikoimaan", "Kyselyyn vastaaminen vie 2-3 minuuttia. Kiitos arvokkaista vastauksistasi!",questionlist1,user1);
 			Questionnaire questionnaire2 = new Questionnaire(null, "Tilojen moderniutta", "Tutkitaan tilojen moderniutta",questionlist2,user2);
 			questionnaireRepository.save(questionnaire1);
 			questionnaireRepository.save(questionnaire2);
@@ -71,24 +71,36 @@ public class QuestionnaireApplication {
 			questionTypeRepository.save(questionType1);
 			questionTypeRepository.save(questionType2);
 			
-			List<Questiontype> questiontypelist = List.of(questionType1, questionType2);
 			
-		
 			
-			Question question1 = new Question(null, "Ovatko tilat viihtyisät?", questionType1, questionnaire1);
-			Question question2 = new Question(null,"Kuinka viihtyisät tilat koulussamme mielestäsi on?", questionType1, questionnaire1);
+			Question question1 = new Question(null, "Miten kurssien työelämäyhteys tuotu esille?", questionType1, questionnaire1);
+			Question question2 = new Question(null,"Oletko suorittanut kursseja?", questionType2, questionnaire1);
+			Question question3 = new Question(null,"Mikä näistä kuvaa parhaiten Haaga-Helian kurssitarjontaa?", questionType1, questionnaire1);
+			Question question4 = new Question(null, "Mitä toivoisit Haaga-Helian kurssitarjonnalta?", questionType1, questionnaire1);
+			Question question5 = new Question(null, "Kuinka todennäköisesti suosittelisit Haaga-Heliaa? (1 = en suosittele lainkaan, 10 = suosittelen lämpimästi)", questionType1, questionnaire1);
+			
 			questionRepository.save(question1);
 			questionRepository.save(question2);
+			questionRepository.save(question3);
+			questionRepository.save(question4);
+			questionRepository.save(question5);
 			
 			//questionlist1.add(question1);
 			
 			//Luodaan uusi option lista
 			//Long optionId, String optionText, Questiontype questiontype
-			Option option1 = new Option(null, "valinta1",questionType2, question1);
-			Option option2 = new Option(null, "valinta2",questionType2, question1);
+			Option option1 = new Option(null, "Campusonline.fi:n kautta",questionType2, question2);
+			Option option2 = new Option(null, "3AMK:n kautta",questionType2, question2);
+			Option option3 = new Option(null, "Virtuaalisesti",questionType2, question2);
+			Option option4 = new Option(null, "Helsingin seudun kesäyliopiston kautta",questionType2, question2);
+			Option option5 = new Option(null, "Ei mikään yllämainituista",questionType2, question2);
+			Option option6 = new Option(null, "Muu, mikä?",questionType2, question2);
 			oRepository.save(option1);
 			oRepository.save(option2);
-			
+			oRepository.save(option3);
+			oRepository.save(option4);
+			oRepository.save(option5);
+			oRepository.save(option6);
 			log.info("Test options are: " + option1 + option2 );
 			List<Option> optionlist1 = List.of(option1,option2);
 			log.info("Test optionlist is: " + optionlist1);
@@ -127,7 +139,7 @@ public class QuestionnaireApplication {
 
 	        //write answerObj object to answer1.json file
 	        
-	        objectMapper.writeValue(new File("answer1.json"), List.of(answer3, answer4));
+	        objectMapper.writeValue(new File("answer2.json"), List.of(answer3, answer4));
 	        
 		};
 	}

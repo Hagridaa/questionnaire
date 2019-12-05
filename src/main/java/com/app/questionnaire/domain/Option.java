@@ -7,9 +7,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Option {
 	
+	//@JsonManagedReference
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name = "questionId")
 	private Question question;
