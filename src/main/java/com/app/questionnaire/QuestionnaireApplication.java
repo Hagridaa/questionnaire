@@ -69,9 +69,11 @@ public class QuestionnaireApplication {
 			Questiontype questionType1 = new Questiontype(null,"text");
 			Questiontype questionType2 = new Questiontype(null,"option");
 			Questiontype questionType3 = new Questiontype(null,"checkbox");
+			Questiontype questionType4 = new Questiontype(null,"Skaala 1-10");
 			questionTypeRepository.save(questionType1);
 			questionTypeRepository.save(questionType2);
 			questionTypeRepository.save(questionType3);
+			questionTypeRepository.save(questionType4);
 			
 			
 			
@@ -79,7 +81,7 @@ public class QuestionnaireApplication {
 			Question question2 = new Question(null,"Oletko suorittanut kursseja?", questionType2, questionnaire1);
 			Question question3 = new Question(null,"Mikä näistä kuvaa parhaiten Haaga-Helian kurssitarjontaa?", questionType3, questionnaire1);
 			Question question4 = new Question(null, "Mitä toivoisit Haaga-Helian kurssitarjonnalta?", questionType1, questionnaire1);
-			Question question5 = new Question(null, "Kuinka todennäköisesti suosittelisit Haaga-Heliaa? (1 = en suosittele lainkaan, 10 = suosittelen lämpimästi)", questionType1, questionnaire1);
+			Question question5 = new Question(null, "Kuinka todennäköisesti suosittelisit Haaga-Heliaa? (1 = en suosittele lainkaan, 10 = suosittelen lämpimästi)", questionType4, questionnaire1);
 			
 			questionRepository.save(question1);
 			questionRepository.save(question2);
@@ -118,6 +120,29 @@ public class QuestionnaireApplication {
 			oRepository.save(option10);
 			List<Option> optionlist2 = List.of(option7,option8,option9,option10);
 			log.info("Test optionlist is for checkbox: " + optionlist2);
+			
+			//skaala 1-10 vastausvaihtoehdot
+			Option option11 = new Option(null, "1",questionType4, question5);
+			Option option12 = new Option(null, "2",questionType4, question5);
+			Option option13 = new Option(null, "3",questionType4, question5);
+			Option option14 = new Option(null, "4",questionType4, question5);
+			Option option15 = new Option(null, "5",questionType4, question5);
+			Option option16 = new Option(null, "6",questionType4, question5);
+			Option option17 = new Option(null, "7",questionType4, question5);
+			Option option18 = new Option(null, "8",questionType4, question5);
+			Option option19 = new Option(null, "9",questionType4, question5);
+			Option option20 = new Option(null, "10",questionType4, question5);
+			oRepository.save(option11);
+			oRepository.save(option12);
+			oRepository.save(option13);
+			oRepository.save(option14);
+			oRepository.save(option15);
+			oRepository.save(option16);
+			oRepository.save(option17);
+			oRepository.save(option18);
+			oRepository.save(option19);
+			oRepository.save(option20);
+			List<Option> optionlist3 = List.of(option11,option12,option13,option14,option16,option17,option18,option19,option20);
 			
 			
 			

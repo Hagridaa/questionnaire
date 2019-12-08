@@ -1,8 +1,8 @@
 [ {
-  "answerId" : 21,
+  "answerId" : 32,
   "answerText" : "tilat ovat viihtyisät",
   "question" : {
-    "questionId" : 6,
+    "questionId" : 7,
     "questionText" : "Miten kurssien työelämäyhteys tuotu esille?",
     "questiontype" : {
       "questiontypeId" : 3,
@@ -23,10 +23,10 @@
     "options" : null
   }
 }, {
-  "answerId" : 22,
+  "answerId" : 33,
   "answerText" : "tilat ovat modernit",
   "question" : {
-    "questionId" : 7,
+    "questionId" : 8,
     "questionText" : "Oletko suorittanut kursseja?",
     "questiontype" : {
       "questiontypeId" : 4,
