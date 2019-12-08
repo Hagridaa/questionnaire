@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface AnswerRepository extends CrudRepository<Answer, Long> {
 	
-	@Query("SELECT s.answerId, s.answerText FROM Answer s")
+	@Query("SELECT s.answerId, s.answerText, s.question.questionId, s.question.questionText FROM Answer s")
 	Iterable<Answer> findallAnswers();
 	
 }
