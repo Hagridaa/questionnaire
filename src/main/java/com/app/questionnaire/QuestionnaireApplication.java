@@ -68,14 +68,16 @@ public class QuestionnaireApplication {
 			//List<Answer> answers
 			Questiontype questionType1 = new Questiontype(null,"text");
 			Questiontype questionType2 = new Questiontype(null,"option");
+			Questiontype questionType3 = new Questiontype(null,"checkbox");
 			questionTypeRepository.save(questionType1);
 			questionTypeRepository.save(questionType2);
+			questionTypeRepository.save(questionType3);
 			
 			
 			
 			Question question1 = new Question(null, "Miten kurssien työelämäyhteys tuotu esille?", questionType1, questionnaire1);
 			Question question2 = new Question(null,"Oletko suorittanut kursseja?", questionType2, questionnaire1);
-			Question question3 = new Question(null,"Mikä näistä kuvaa parhaiten Haaga-Helian kurssitarjontaa?", questionType1, questionnaire1);
+			Question question3 = new Question(null,"Mikä näistä kuvaa parhaiten Haaga-Helian kurssitarjontaa?", questionType3, questionnaire1);
 			Question question4 = new Question(null, "Mitä toivoisit Haaga-Helian kurssitarjonnalta?", questionType1, questionnaire1);
 			Question question5 = new Question(null, "Kuinka todennäköisesti suosittelisit Haaga-Heliaa? (1 = en suosittele lainkaan, 10 = suosittelen lämpimästi)", questionType1, questionnaire1);
 			
@@ -102,9 +104,22 @@ public class QuestionnaireApplication {
 			oRepository.save(option5);
 			oRepository.save(option6);
 			log.info("Test options are: " + option1 + option2 );
-			List<Option> optionlist1 = List.of(option1,option2);
+			List<Option> optionlist1 = List.of(option1,option2,option3,option4,option5,option6);
 			log.info("Test optionlist is: " + optionlist1);
 
+			//checkbox kysymys vastausvaihtoehdot
+			Option option7 = new Option(null, ":D",questionType3, question3);
+			Option option8 = new Option(null, ":)",questionType3, question3);
+			Option option9 = new Option(null, ":I",questionType3, question3);
+			Option option10 = new Option(null, ":(",questionType3, question3);
+			oRepository.save(option7);
+			oRepository.save(option8);
+			oRepository.save(option9);
+			oRepository.save(option10);
+			List<Option> optionlist2 = List.of(option7,option8,option9,option10);
+			log.info("Test optionlist is for checkbox: " + optionlist2);
+			
+			
 			
 			log.info("Test questions are: " + question1 + " and " + question2);
 			log.info("Test questionlist is: " + questionlist1);
