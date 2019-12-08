@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,18 +64,21 @@ public class OptionController {
 	   
 		
 	    // JSON options
+	    @CrossOrigin
 		@RequestMapping(value="/api/options", method = RequestMethod.GET)
 		public @ResponseBody List<Option> getRestQuestions() {
 				return (List<Option>) optionRepository.findAll();
 		}
 		
 		// get JSON option by id
+	    @CrossOrigin
 		@RequestMapping(value="/api/options/{id}", method = RequestMethod.GET)
 		public @ResponseBody Optional<Option> findOptionById(@PathVariable("id") Long optionId) {
 			return optionRepository.findById(optionId);
 		}
 		
 		// JSON get options by question id
+	    @CrossOrigin
 	 	@RequestMapping(value="/api/questions/{id}/options", method = RequestMethod.GET)
 		public @ResponseBody List<Option> findAllOptionsByQuestionId(@PathVariable("id") Long questionId) {
 			Optional<Question> question = questionRepository.findById(questionId);
