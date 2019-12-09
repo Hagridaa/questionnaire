@@ -90,6 +90,13 @@ public class QuestionnaireApplication {
 			questionRepository.save(question5);
 			
 			//questionlist1.add(question1);
+			Option option30 = new Option(null, "Kurssilla on käyty yritysvierailulla",questionType2, question1);
+			Option option31 = new Option(null, "Yrityksen edustaja on käynyt luennoimassa kurssin aiheesta",questionType2, question1);
+			Option option32 = new Option(null, "Kurssin toimeksiantajana on ollut yritys",questionType2, question1);
+			Option option33 = new Option(null, "Opettaja on kertonut esimerkkejä yrityksistä, joissa opeteltavat metodit ovat käytössä",questionType2, question1);
+			Option option34 = new Option(null, "Muu, mikä?",questionType2, question1);
+			oRepository.save(option30);
+			List<Option> optionlist4 = List.of(option30,option31,option32,option33,option34);
 			
 			//Luodaan uusi option lista
 			//Long optionId, String optionText, Questiontype questiontype
@@ -165,8 +172,8 @@ public class QuestionnaireApplication {
 			ObjectMapper objectMapper = new ObjectMapper();
 
 			//Answer(Long answerId, String answerText, Question question
-			Answer answer3 = new Answer(null,"tilat ovat viihtyisät",question1);
-			Answer answer4 = new Answer(null,"tilat ovat modernit",question2);
+			Answer answer3 = new Answer(null,"Kurssilla on käyty yritysvierailulla",question1);
+			Answer answer4 = new Answer(null,"Campusonline.fi:n kautta",question2);
 			aRepository.save(answer3);
 			aRepository.save(answer4);
 			
