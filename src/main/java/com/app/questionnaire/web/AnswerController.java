@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.questionnaire.domain.Answer;
+import com.app.questionnaire.domain.AnswerDto;
 import com.app.questionnaire.domain.AnswerRepository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -29,9 +30,15 @@ public class AnswerController {
 	@Autowired
 	AnswerRepository aRepository;
 	
-	@RequestMapping(value="/allanswers", method = RequestMethod.GET)
-	public Iterable<Answer> findAllAnswers() {
-		return aRepository.findallAnswers();
+	//@RequestMapping(value="/allanswers", method = RequestMethod.GET)
+	//public Iterable<Answer> findAllAnswers() {
+	//	return aRepository.findallAnswers();
+	//}
+	
+	//answerDto function (more informatiove allanswers)
+	@RequestMapping(value="allanswers", method = RequestMethod.GET)
+	public Iterable<AnswerDto> fetchAll() {
+		return aRepository.fetchAll();
 	}
 	
 	@RequestMapping(value="/saveanswer", method = RequestMethod.POST, consumes="application/json")
