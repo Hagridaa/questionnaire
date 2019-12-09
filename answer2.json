@@ -1,6 +1,6 @@
 [ {
-  "answerId" : 32,
-  "answerText" : "tilat ovat viihtyisät",
+  "answerId" : 33,
+  "answerText" : "Kurssilla on käyty yritysvierailulla",
   "question" : {
     "questionId" : 7,
     "questionText" : "Miten kurssien työelämäyhteys tuotu esille?",
@@ -23,8 +23,8 @@
     "options" : null
   }
 }, {
-  "answerId" : 33,
-  "answerText" : "tilat ovat modernit",
+  "answerId" : 34,
+  "answerText" : "Campusonline.fi:n kautta",
   "question" : {
     "questionId" : 8,
     "questionText" : "Oletko suorittanut kursseja?",
