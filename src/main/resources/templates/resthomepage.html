@@ -36,16 +36,19 @@
 	<pre>
 		<code>
 		[{
-			"questionText": "Miten kurssien työelämäyhteys tuotu esille?",
-			"questionType": "text"
+			"questionId": 6,
+			"questionText": "Miten kurssien työelämäyhteys on tuotu esille?",
+			"questiontypeName": "checkbox"
 		},
 		{
+			"questionId": 7,
 			"questionText": "Oletko suorittanut kursseja",
-			"questionType": "text"
+			"questiontypeName": "checkbox"
 		},
 		{
-			"questionText": "Mikä näistä kuvaa parhaiten Haaga-Helian kurssitarjontaa",
-			"questionType": "text"
+			"questionId": 10,
+			"questionText": "5. Kuinka todennäköisesti suosittelisit Haaga-Heliaa? (1 = en suosittele lainkaan, 10 = suosittelen lämpimästi)",
+			"questiontypeName": "Skaala 1-10"
 		}]
 		</code>
 	</pre>
@@ -53,7 +56,7 @@
 		<h2>Question By Id</h2>
 	<p>
 	<strong>Method:</strong> GET <strong>Endpoint:</strong> <strong><a
-			href=https://questionnaireapp.herokuapp.com/api/questions/5>/api/questions/{id}</a></strong>
+			href=https://questionnaireapp.herokuapp.com/api/questions/10>/api/questions/{id}</a></strong>
 	</p>
 	<p>
 		<strong>JSON Example:</strong>
@@ -61,8 +64,8 @@
 	<pre>
 		<code>
 		{
-			"questionId" : 5,
-			"questionText" : "Ovatko tilat viihtyisät?",
+			"questionId" : 10,
+			"questionText" : "5. Kuinka todennäköisesti suosittelisit Haaga-Heliaa? (1 = en suosittele lainkaan, 10 = suosittelen lämpimästi)",
 			"questionnaire" : {
 				"questionnaireId" : 1
 		}
@@ -79,28 +82,39 @@
 	</p>
 	<pre>
 		<code>
-		[{
-			"question" : {
-				"questionId" : 5
-		},
-			"optionId" : 7,
-			"optionText" : "valinta1"
-		},
-		{
-			"question" : {
-				"questionId" : 5
-		},
-		{
-			"optionId" : 8,
-			"optionText" : "valinta2"
-		}]
+	[
+	    {
+	        "optionId": 11,
+	        "optionText": "Kurssilla on käyty yritysvierailulla",
+	        "questiontype": {
+	            "questiontypeId": 3,
+	            "questiontypeName": "option"
+	        }
+	    },
+	    {
+	        "optionId": 20,
+	        "optionText": ":D",
+	        "questiontype": {
+	            "questiontypeId": 4,
+	            "questiontypeName": "checkbox"
+	        }
+	    },
+	    {
+	        "optionId": 33,
+	        "optionText": "10",
+	        "questiontype": {
+	            "questiontypeId": 5,
+	            "questiontypeName": "Skaala 1-10"
+	        }
+	    }
+	]
 
 		</code>
 	</pre>
 						<h2>Get option by Id</h2>
 	<p>
 	<strong>Method:</strong> GET <strong>Endpoint:</strong> <strong><a
-			href=https://questionnaireapp.herokuapp.com/api/options/7>/api/options/{id}</a></strong>
+			href=https://questionnaireapp.herokuapp.com/api/options/11>/api/options/{id}</a></strong>
 	</p>
 	<p>
 		<strong>JSON Example:</strong>
@@ -108,11 +122,12 @@
 	<pre>
 		<code>
 		{
-			"question" : {
-			"questionId" : 5
-		},
-			"optionId" : 7,
-			"optionText" : "valinta1"
+		    "optionId": 11,
+		    "optionText": "Kurssilla on käyty yritysvierailulla",
+		    "questiontype": {
+		        "questiontypeId": 3,
+		        "questiontypeName": "option"
+		    }
 		}
 
 		</code>
@@ -121,27 +136,47 @@
 				<h2>Get options by Question Id</h2>
 	<p>
 	<strong>Method:</strong> GET <strong>Endpoint:</strong> <strong><a
-			href=https://questionnaireapp.herokuapp.com/api/questions/5/options>/api/questions/{id}/options</a></strong>
+			href=https://questionnaireapp.herokuapp.com/api/questions/6/options>/api/questions/{id}/options</a></strong>
 	</p>
 	<p>
 		<strong>JSON Example:</strong>
 	</p>
 	<pre>
 		<code>
-		[{
-			"question" : {
-				"questionId" : 5
-		},
-			"optionId" : 7,
-			"optionText" : "valinta1"
-		},
-		{
-			"question" : {
-				"questionId" : 5
-		},
-			"optionId" : 8,
-			"optionText" : "valinta2"
-		}]
+	[
+	    {
+	        "optionId": 11,
+	        "optionText": "Kurssilla on käyty yritysvierailulla",
+	        "questiontype": {
+	            "questiontypeId": 3,
+	            "questiontypeName": "option"
+	        }
+	    },
+	    {
+	        "optionId": 12,
+	        "optionText": "Yrityksen edustaja on käynyt luennoimassa kurssin aiheesta",
+	        "questiontype": {
+	            "questiontypeId": 3,
+	            "questiontypeName": "option"
+	        }
+	    },
+	    {
+	        "optionId": 13,
+	        "optionText": "Kurssin toimeksiantajana on ollut yritys",
+	        "questiontype": {
+	            "questiontypeId": 3,
+	            "questiontypeName": "option"
+	        }
+	    },
+	    {
+	        "optionId": 14,
+	        "optionText": "Opettaja on kertonut esimerkkejä yrityksistä, joissa opeteltavat metodit ovat käytössä",
+	        "questiontype": {
+	            "questiontypeId": 3,
+	            "questiontypeName": "option"
+	        }
+	    }
+	]
 
 		</code>
 	</pre>
@@ -156,21 +191,22 @@
 	</p>
 	<pre>
 		<code>
-	[ {
-  "answerId" : null,
-  "answerText" : "Campusonline.fi:n kautta",
-  "question" : {
-    "questionId" : 7
-    }
-  },
-  {
-  "answerId" : null,
-  "answerText" : "Virtuaalisesti",
-  "question" : {
-    "questionId" : 8
-  }
-} 
-]
+	[ 
+	  {
+	    "answerId" : null,
+	    "answerText" : "Erinomaisesti",
+	    "question" : {
+	      "questionId" : 6
+	    }
+	  },
+	  {
+	    "answerId" : null,
+	    "answerText" : "8",
+	    "question" : {
+	      "questionId" : 10
+	    }
+	  } 
+	]
 		</code>
 	</pre>
 	
@@ -186,18 +222,23 @@
 		<code>
 		
 		
-		[
-    {
-        "answerId": 33,
-        "answerText": "Kurssilla on käyty yritysvierailulla",
-        "questionId": 7
-    },
-    {
-        "answerId": 34,
-        "answerText": "Campusonline.fi:n kautta",
-        "questionId": 8
-    }
-		]
+	[
+	    {
+	        "answerId": 34,
+	        "answerText": "Kurssilla on käyty yritysvierailulla",
+	        "questionId": 6
+	    },
+	    {
+	        "answerId": 35,
+	        "answerText": "Campusonline.fi:n kautta",
+	        "questionId": 7
+	    },
+	    {
+	        "answerId": 40,
+	        "answerText": "Erinomaisesti",
+	        "questionId": 6
+	    }
+	]
 	    
 	    
 		</code>
@@ -215,16 +256,13 @@
 		<code>
 		
 		
-		[{
-			"questionnaireId": 1,
-			"questionnaireTitle": "Kurssitarjonta",
-			"questionnaireDescription": "Tutkimme Haaga-Helian kurssitarjonnan työelämäyhteyttä sekä opiskelijoiden tyytyväisyyttä kurssivalikoimaan"
-			},
-		{
-			"questionnaireId": 2,
-			"questionnaireTitle": "Tilojen viihtyisyys2",
-			"questionnaireDescription": "Tutkitaan tilojen xx2"
-		}]
+	[	
+	    {
+		"questionnaireId": 1,
+		"questionnaireTitle": "Tutkimme Haaga-Helian kurssitarjonnan työelämäyhteyttä sekä opiskelijoiden tyytyväisyyttä kurssivalikoimaan",
+		"questionnaireDescription": "Kyselyyn vastaaminen vie 2-3 minuuttia. Kiitos arvokkaista vastauksistasi!"
+	    }
+	]
 		
 		
 		</code>
