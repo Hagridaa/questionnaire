@@ -1,12 +1,12 @@
 [ {
-  "answerId" : 33,
+  "answerId" : 34,
   "answerText" : "Kurssilla on käyty yritysvierailulla",
   "question" : {
-    "questionId" : 7,
-    "questionText" : "Miten kurssien työelämäyhteys tuotu esille?",
+    "questionId" : 6,
+    "questionText" : "1. Miten kurssien työelämäyhteys tuotu esille?",
     "questiontype" : {
-      "questiontypeId" : 3,
-      "questiontypeName" : "text"
+      "questiontypeId" : 4,
+      "questiontypeName" : "checkbox"
     },
     "questionnaire" : {
       "questionnaireId" : 1,
@@ -23,14 +23,14 @@
     "options" : null
   }
 }, {
-  "answerId" : 34,
+  "answerId" : 35,
   "answerText" : "Campusonline.fi:n kautta",
   "question" : {
-    "questionId" : 8,
-    "questionText" : "Oletko suorittanut kursseja?",
+    "questionId" : 7,
+    "questionText" : "2. Oletko suorittanut kursseja?",
     "questiontype" : {
       "questiontypeId" : 4,
-      "questiontypeName" : "option"
+      "questiontypeName" : "checkbox"
     },
     "questionnaire" : {
       "questionnaireId" : 1,
