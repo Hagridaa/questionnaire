@@ -109,15 +109,15 @@ public class QuestionnaireApplication {
 			Option option3 = new Option(null, "Virtuaalisesti",questionType2, question2);
 			Option option4 = new Option(null, "Helsingin seudun kesäyliopiston kautta",questionType2, question2);
 			Option option5 = new Option(null, "Ei mikään yllämainituista",questionType2, question2);
-			Option option6 = new Option(null, "Muu, mikä?",questionType2, question2);
+			//Option option6 = new Option(null, "Muu, mikä?",questionType2, question2);
 			oRepository.save(option1);
 			oRepository.save(option2);
 			oRepository.save(option3);
 			oRepository.save(option4);
 			oRepository.save(option5);
-			oRepository.save(option6);
+			//oRepository.save(option6);
 			log.info("Test options are: " + option1 + option2 );
-			List<Option> optionlist1 = List.of(option1,option2,option3,option4,option5,option6);
+			List<Option> optionlist1 = List.of(option1,option2,option3,option4,option5);
 			log.info("Test optionlist is: " + optionlist1);
 
 			//checkbox kysymys vastausvaihtoehdot
