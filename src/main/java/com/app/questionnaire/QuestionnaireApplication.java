@@ -56,11 +56,11 @@ public class QuestionnaireApplication {
 			List<Question> questionlist2 = new ArrayList<>();
 			
 			Questionnaire questionnaire1 = new Questionnaire(null, "Tutkimme Haaga-Helian kurssitarjonnan työelämäyhteyttä sekä opiskelijoiden tyytyväisyyttä kurssivalikoimaan", "Kyselyyn vastaaminen vie 2-3 minuuttia. Kiitos arvokkaista vastauksistasi!",questionlist1,user1);
-			Questionnaire questionnaire2 = new Questionnaire(null, "Tilojen moderniutta", "Tutkitaan tilojen moderniutta",questionlist2,user2);
+			//Questionnaire questionnaire2 = new Questionnaire(null, "Tilojen moderniutta", "Tutkitaan tilojen moderniutta",questionlist2,user2);
 			questionnaireRepository.save(questionnaire1);
-			questionnaireRepository.save(questionnaire2);
-			List<Questionnaire> questionnaires = List.of(questionnaire1,questionnaire2);
-			log.info("Test questionnaires are: " + questionnaire1, questionnaire2);
+			//questionnaireRepository.save(questionnaire2);
+			List<Questionnaire> questionnaires = List.of(questionnaire1);
+			log.info("Test questionnaires are: " + questionnaire1);
 			log.info("Testlist is: "+ questionnaires);
 			
 			//luodaan uusi kysymys
@@ -100,7 +100,7 @@ public class QuestionnaireApplication {
 			oRepository.save(option32);
 			oRepository.save(option33);
 			//oRepository.save(option34);
-			List<Option> optionlist4 = List.of(option30,option31,option32,option33,option34);
+			List<Option> optionlist4 = List.of(option30,option31,option32,option33);
 			
 			//Luodaan uusi option lista
 			//Long optionId, String optionText, Questiontype questiontype
