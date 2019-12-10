@@ -3,7 +3,7 @@
 <head>
 <title>Questionlist</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{../css/bootstrap.min.css}" />
+<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
 </head>
 <body>
 <div class="jumbotron">
@@ -25,6 +25,8 @@
 	<br>
 		
 		 <a th:href="@{/newquestion/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-success">Add a new text question</a>
+		 <a class="btn btn-info" href="/questionnaires" > Back to questionnaire list</a>
+	
 		<!--  <a th:href="@{/newoptionquestion/{id}(id=${questionnaire.questionnaireId})}" class="btn btn-success">Add a new multiple choice question</a> -->
 </body>
 </html>
