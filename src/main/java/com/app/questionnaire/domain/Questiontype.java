@@ -27,6 +27,7 @@ public class Questiontype {
 	@JsonIgnore
 	private List<Question> questions;
 	
+	// options list was not used in the final version of the project
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "questiontype")
 	@JsonIgnore
 	private List<Option> options;
