@@ -77,11 +77,11 @@ public class QuestionnaireApplication {
 			
 			
 			
-			Question question1 = new Question(null, "Miten kurssien työelämäyhteys tuotu esille?", questionType1, questionnaire1);
-			Question question2 = new Question(null,"Oletko suorittanut kursseja?", questionType2, questionnaire1);
-			Question question3 = new Question(null,"Mikä näistä kuvaa parhaiten Haaga-Helian kurssitarjontaa?", questionType3, questionnaire1);
-			Question question4 = new Question(null, "Mitä toivoisit Haaga-Helian kurssitarjonnalta?", questionType1, questionnaire1);
-			Question question5 = new Question(null, "Kuinka todennäköisesti suosittelisit Haaga-Heliaa? (1 = en suosittele lainkaan, 10 = suosittelen lämpimästi)", questionType4, questionnaire1);
+			Question question1 = new Question(null, "1. Miten kurssien työelämäyhteys tuotu esille?", questionType3, questionnaire1);
+			Question question2 = new Question(null, "2. Oletko suorittanut kursseja?", questionType3, questionnaire1);
+			Question question3 = new Question(null, "3. Mikä näistä kuvaa parhaiten Haaga-Helian kurssitarjontaa?", questionType3, questionnaire1);
+			Question question4 = new Question(null, "4. Mitä toivoisit Haaga-Helian kurssitarjonnalta?", questionType1, questionnaire1);
+			Question question5 = new Question(null, "5. Kuinka todennäköisesti suosittelisit Haaga-Heliaa? (1 = en suosittele lainkaan, 10 = suosittelen lämpimästi)", questionType4, questionnaire1);
 			
 			questionRepository.save(question1);
 			questionRepository.save(question2);
@@ -94,8 +94,12 @@ public class QuestionnaireApplication {
 			Option option31 = new Option(null, "Yrityksen edustaja on käynyt luennoimassa kurssin aiheesta",questionType2, question1);
 			Option option32 = new Option(null, "Kurssin toimeksiantajana on ollut yritys",questionType2, question1);
 			Option option33 = new Option(null, "Opettaja on kertonut esimerkkejä yrityksistä, joissa opeteltavat metodit ovat käytössä",questionType2, question1);
-			Option option34 = new Option(null, "Muu, mikä?",questionType2, question1);
+			//Option option34 = new Option(null, "Muu, mikä?",questionType2, question1);
 			oRepository.save(option30);
+			oRepository.save(option31);
+			oRepository.save(option32);
+			oRepository.save(option33);
+			//oRepository.save(option34);
 			List<Option> optionlist4 = List.of(option30,option31,option32,option33,option34);
 			
 			//Luodaan uusi option lista
