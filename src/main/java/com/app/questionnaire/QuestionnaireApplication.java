@@ -77,7 +77,7 @@ public class QuestionnaireApplication {
 			
 			
 			
-			Question question1 = new Question(null, "1. Miten kurssien työelämäyhteys tuotu esille?", questionType3, questionnaire1);
+			Question question1 = new Question(null, "1. Miten kurssien työelämäyhteys on tuotu esille?", questionType3, questionnaire1);
 			Question question2 = new Question(null, "2. Oletko suorittanut kursseja?", questionType3, questionnaire1);
 			Question question3 = new Question(null, "3. Mikä näistä kuvaa parhaiten Haaga-Helian kurssitarjontaa?", questionType3, questionnaire1);
 			Question question4 = new Question(null, "4. Mitä toivoisit Haaga-Helian kurssitarjonnalta?", questionType1, questionnaire1);

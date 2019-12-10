@@ -3,7 +3,7 @@
   "answerText" : "Kurssilla on käyty yritysvierailulla",
   "question" : {
     "questionId" : 6,
-    "questionText" : "1. Miten kurssien työelämäyhteys tuotu esille?",
+    "questionText" : "1. Miten kurssien työelämäyhteys on tuotu esille?",
     "questiontype" : {
       "questiontypeId" : 4,
       "questiontypeName" : "checkbox"
