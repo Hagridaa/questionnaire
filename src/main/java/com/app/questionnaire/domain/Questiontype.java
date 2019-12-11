@@ -28,22 +28,21 @@ public class Questiontype {
 	private List<Question> questions;
 	
 	// options list was not used in the final version of the project
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "questiontype")
-	@JsonIgnore
-	private List<Option> options;
+	//@OneToMany(cascade = CascadeType.ALL, mappedBy = "questiontype")
+	//@JsonIgnore
+	//private List<Option> options;
 	
 	
 
-	public Questiontype(Long questiontypeId, String questiontypeName, List<Question> questions, List<Option> options) {
+	public Questiontype() {
+		super();
+	}
+
+	public Questiontype(Long questiontypeId, String questiontypeName, List<Question> questions) {
 		super();
 		this.questiontypeId = questiontypeId;
 		this.questiontypeName = questiontypeName;
 		this.questions = questions;
-		this.options = options;
-	}
-
-	public Questiontype() {
-		super();
 	}
 
 	public Questiontype(Long questiontypeId, String questiontypeName) {
@@ -77,19 +76,21 @@ public class Questiontype {
 		this.questions = questions;
 	}
 
-	public List<Option> getOptions() {
-		return options;
-	}
-
-	public void setOptions(List<Option> options) {
-		this.options = options;
-	}
-
 	@Override
 	public String toString() {
 		return "Questiontype [questiontypeId=" + questiontypeId + ", questiontypeName=" + questiontypeName
-				+ ", questions=" + questions + ", options=" + options + "]";
+				+ ", questions=" + questions + "]";
 	}
+
+	//public List<Option> getOptions() {
+		//return options;
+	//}
+
+	//public void setOptions(List<Option> options) {
+		//this.options = options;
+	//}
+
+	
 
 	//@Override
 	//public String toString() {

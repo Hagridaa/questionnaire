@@ -178,6 +178,10 @@ public class QuestionnaireApplication {
 			//Answer(Long answerId, String answerText, Question question
 			Answer answer3 = new Answer(null,"Kurssilla on käyty yritysvierailulla",question1);
 			Answer answer4 = new Answer(null,"Campusonline.fi:n kautta",question2);
+			
+			List<Option> optionlist5 = List.of(option31,option32);
+			Answer answer5 = new Answer(null,question1,optionlist5);
+			
 			aRepository.save(answer3);
 			aRepository.save(answer4);
 			
@@ -191,6 +195,7 @@ public class QuestionnaireApplication {
 	        //write answerObj object to answer1.json file
 	        
 	        objectMapper.writeValue(new File("answer2.json"), List.of(answer3, answer4));
+	        objectMapper.writeValue(new File("answeroptions.json"), List.of(answer5));
 	        
 		};
 	}

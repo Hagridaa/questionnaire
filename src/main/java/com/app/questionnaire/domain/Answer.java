@@ -1,5 +1,8 @@
 package com.app.questionnaire.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,9 +10,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 
 @Entity
+@JsonIdentityInfo(
+		generator = ObjectIdGenerators.PropertyGenerator.class, 
+		property = "answerId")
+
 public class Answer {
 
 	@Id
@@ -23,6 +35,17 @@ public class Answer {
 	@ManyToOne
 	@JoinColumn(name = "questionId")
 	private Question question;
+	
+	//@JsonManagedReference(value="answer-reference")
+	@OneToMany(cascade = CascadeType.MERGE, mappedBy = "question")
+	private List<Option> options;
+
+	public Answer(Long answerId, Question question, List<Option> options) {
+		super();
+		this.answerId = answerId;
+		this.question = question;
+		this.options = options;
+	}
 
 	public Answer() {
 		super();
@@ -33,6 +56,14 @@ public class Answer {
 		this.answerId = answerId;
 		this.answerText = answerText;
 		this.question = question;
+	}
+
+	public List<Option> getOptions() {
+		return options;
+	}
+
+	public void setOptions(List<Option> options) {
+		this.options = options;
 	}
 
 	public Long getAnswerId() {
@@ -61,7 +92,8 @@ public class Answer {
 
 	@Override
 	public String toString() {
-		return "Answer [answerId=" + answerId + ", answerText=" + answerText + ", question=" + question + "]";
+		return "Answer [answerId=" + answerId + ", answerText=" + answerText + ", question=" + question + ", options="
+				+ options + "]";
 	}
 	
 	

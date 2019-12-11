@@ -30,10 +30,10 @@ public class AnswerController {
 	@Autowired
 	AnswerRepository aRepository;
 	
-	//@RequestMapping(value="/allanswers", method = RequestMethod.GET)
-	//public Iterable<Answer> findAllAnswers() {
-	//	return aRepository.findallAnswers();
-	//}
+	@RequestMapping(value="/alloptionanswers", method = RequestMethod.GET)
+	public Iterable<Answer> findAllAnswers() {
+		return aRepository.findAll();
+	}
 	
 	//answerDto function (more informatiove allanswers)
 	@RequestMapping(value="allanswers", method = RequestMethod.GET)

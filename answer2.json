@@ -21,7 +21,8 @@
       }
     },
     "options" : null
-  }
+  },
+  "options" : null
 }, {
   "answerId" : 35,
   "answerText" : "Campusonline.fi:n kautta",
@@ -45,5 +46,6 @@
       }
     },
     "options" : null
-  }
+  },
+  "options" : null
 } ]
